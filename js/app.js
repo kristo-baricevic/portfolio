@@ -1,3 +1,8 @@
+// Define variables for the form and results div
+const form = document.querySelector('#songForm');
+const resultsDiv = document.querySelector('#results');
+
+//get track
 async function getTrackId(songName, token) {
   const searchResponse = await fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(songName)}&type=track&limit=1`, {
     headers: {
@@ -40,3 +45,14 @@ async function getRecommendations(songName) {
     console.error(error);
   }
 }
+
+
+// Function to handle form submission
+function handleFormSubmit(event) {
+    event.preventDefault();
+    const songName = document.querySelector('#song').value;
+    getRecommendations(songName);
+    }
+
+// Event listener for form submission
+form.addEventListener('submit', handleFormSubmit);
