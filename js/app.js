@@ -1,6 +1,8 @@
 // Define variables for the form and results div
 const form = document.querySelector('#artistForm');
 const resultsDiv = document.querySelector('#results');
+const artistInput = document.querySelector('#artist');
+artistInput.placeholder = 'Enter artist name';
 
 async function getArtistId(artistName, token) {
   const searchResponse = await fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(artistName)}&type=artist&limit=1`, {
@@ -52,10 +54,6 @@ function handleFormSubmit(event) {
   getRecommendations(artistName);
 }
 
-// Update form query selector and placeholder
-const form = document.querySelector('#artistForm');
-const artistInput = document.querySelector('#artist');
-artistInput.placeholder = 'Enter artist name';
 
 // Event listener for form submission
 form.addEventListener('submit', handleFormSubmit);
