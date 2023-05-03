@@ -1,5 +1,5 @@
 // Define variables for the form and results div
-const form = document.querySelector('#songForm');
+const form = document.querySelector('#artistForm');
 const resultsDiv = document.querySelector('#results');
 
 async function getArtistId(artistName, token) {
