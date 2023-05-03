@@ -40,7 +40,9 @@ async function getRecommendations(artistName) {
     const recommendationsData = await recommendationsResponse.json();
 
     // Display similar artists
-    let artists = recommendationsData.tracks.map(track => track.artists[0].name);
+    let artists = recommendationsData.tracks
+      .map(track => track.artists[0].name)
+      .filter(artist => artist.toLowerCase() !== artistName.toLowerCase());
     resultsDiv.innerHTML = `<p>Similar artists to ${artistName}: ${artists.join(', ')}</p>`;
   } catch (error) {
     console.error(error);
