@@ -535,6 +535,7 @@ h3 {
 
 .artist-item:hover {
     background-color: #ff6dcd;
+    cursor: pointer;
 }
 
 .api-heading {

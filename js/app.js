@@ -50,10 +50,22 @@ async function getRecommendations(artistName) {
       <h3>Similar artists to ${artistName}:</h3>
       <ul class="artists-list">${artistsList}</ul>
     `;
+
+    // Add event listener to list items for Google search
+    const artistItems = document.querySelectorAll('.artist-item');
+    artistItems.forEach((item) => {
+      item.addEventListener('click', () => {
+        const searchTerm = item.textContent;
+        const searchUrl = `https://www.google.com/search?q=${searchTerm}`;
+
+        window.open(searchUrl, '_blank');
+      });
+    });
   } catch (error) {
     console.error(error);
   }
 }
+
 
 // Function to handle form submission
 function handleFormSubmit(event) {
