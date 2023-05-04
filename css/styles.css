@@ -21,6 +21,14 @@ body {
     align-items: stretch;
 }
 
+.about-links-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    max-width: 500px;
+}
+
 .small-profile-photo {
     width: 50px;
     height: 50px;
@@ -31,7 +39,7 @@ body {
 .repo-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: .5rem;
 }
 
 .repo-title {
@@ -51,6 +59,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 5px;
 }
 
 .repo-article:hover {
@@ -233,13 +242,20 @@ nav a {
 }
 
 nav ul li a:hover {
-    background: #666;
+    color: #d3d3d3;
 }
 
 /* Style the main content area */
+
 main {
-    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 a {
     text-decoration: none;
@@ -308,6 +324,7 @@ img {
   align-items: center;
   font-size: 0.875rem;
   font-weight: 600;
+  gap: 10px;
   color: #1a202c;
 }
 
@@ -336,14 +353,13 @@ img {
 
 .work-date {
   font-size: 0.875rem;
-  color: #a0aec0;
   margin-left: auto;
 }
 
 .download-cv-button {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 1rem;
   justify-content: center;
   padding: 0.5rem 1rem;
   border-radius: 9999px;
@@ -416,7 +432,7 @@ img {
 /* Projects Page */
 
 .projects-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -573,7 +589,7 @@ button:hover {
 
 /* Style the footer */
 footer {
-    background-color: #333;
+    background-color: #5a60ea;
     color: white;
     text-align: center;
     padding: 10px;
