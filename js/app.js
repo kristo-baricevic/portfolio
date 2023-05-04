@@ -42,7 +42,8 @@ async function getRecommendations(artistName) {
     // Display similar artists
     let artists = recommendationsData.tracks
       .map(track => track.artists[0].name)
-      .filter(artist => artist.toLowerCase() !== artistName.toLowerCase());
+      .filter(artist => artist.toLowerCase() !== artistName.toLowerCase())
+      .slice(0, 5);
 
     let artistsList = artists.map(artist => `<li class="artist-item">${artist}</li>`).join('');
     resultsDiv.innerHTML = `
