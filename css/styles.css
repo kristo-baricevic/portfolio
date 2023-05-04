@@ -52,6 +52,10 @@ body {
   align-items: flex-start;
 }
 
+.repo-article:hover {
+  background-color: #f0f0f0;
+}
+
 .repo-article h2 {
   font-size: 1rem;
   font-weight: 600;
