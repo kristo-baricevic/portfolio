@@ -576,6 +576,7 @@ button {
     border-radius: 0.25rem;
     margin-top: 1rem;
     cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
 }
 
 button:hover {
