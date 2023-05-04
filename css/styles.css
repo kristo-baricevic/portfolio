@@ -605,27 +605,43 @@ footer {
 main{
     max-width: 100%;
     margin: 0;
-}
+ }
 
-  .columns-container {
+.columns-container {
     flex-direction: column;
-  }
+ }
 
-  .column {
+.column {
     width: 100%;
-  }
+ }
 }
 
 @media only screen and (max-width: 600px) {
-  body {
+body {
     font-size: 16px;
-  }
-  .container {
+ }
+
+.container {
     padding: 10px;
-  }
+ }
 
 .rounded-image-wrapper {
     max-width: 300px;
     max-height: 300px;
-}
+ }
+
+.work-details {
+  display: flex;
+  flex-direction:column;
+  gap: 0rem;
+ }
+
+.work-date {
+  margin-left: 0;
+  padding-bottom: 10px;
+ }
+
+.work-experience-heading {
+  padding-bottom: 10px;
+ }
 }
