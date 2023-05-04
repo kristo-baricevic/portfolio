@@ -121,7 +121,18 @@ body {
 }
 
 .repo-link:hover {
-  text-decoration: underline;
+  background-color: #f0f0f0;
+}
+
+.repo-link:hover .visit-repo-link {
+  color: #0366d6;
+}
+
+.visit-repo-link {
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
 }
 
 .repo-date {
