@@ -600,6 +600,23 @@ footer {
 }
 
 /* Media query for smaller screens */
+@media screen and (max-width: 840px) {
+
+.work-details {
+  display: flex;
+  flex-direction:column;
+  gap: 0rem;
+ }
+
+.work-date {
+  margin-left: 0;
+  padding-bottom: 10px;
+ }
+
+.work-experience-heading {
+  padding-bottom: 10px;
+ }
+}
 @media screen and (max-width: 767px) {
 
 main{
@@ -630,18 +647,4 @@ body {
     max-height: 250px;
  }
 
-.work-details {
-  display: flex;
-  flex-direction:column;
-  gap: 0rem;
- }
-
-.work-date {
-  margin-left: 0;
-  padding-bottom: 10px;
- }
-
-.work-experience-heading {
-  padding-bottom: 10px;
- }
 }
