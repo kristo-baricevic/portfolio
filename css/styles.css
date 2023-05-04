@@ -207,42 +207,45 @@ header {
 }
 
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 nav li {
-    display: inline-block;
-    padding: 10px;
-    margin-left: 10rem;
-
-}
+  margin: 0 0.5rem;
+ }
 
 nav li:first-child {
-    margin-left: 0;
-    position: absolute;
-    left: 1rem;
+  margin-left: 0;
+  position: relative;
+}
+
+nav li:first-child img {
+  flex-shrink: 0;
+}
+
+nav li:nth-child(2) {
+  margin-left: 0.5rem;
 }
 
 nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 nav ul li a:hover {
-    color: #d3d3d3;
+  color: #d3d3d3;
 }
 
 /* Style the main content area */
