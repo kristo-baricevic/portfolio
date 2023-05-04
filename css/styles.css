@@ -467,33 +467,7 @@ img {
     margin-bottom: 1rem;
 }
 
-/* API Page */
-#results {
-    font-family: Arial, sans-serif;
-}
 
-h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.artists-list {
-    list-style-type: none;
-    padding-left: 0;
-    margin-bottom: 2rem;
-    display: block;
-}
-
-artist-item {
-    font-size: 1.2rem;
-    font-weight: bold;
-    background-color: #f1f1f1;
-    color: #333;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    margin-bottom: 0.5rem;
-    display: block;
-}
 
 /* Social Links */
 main ul {
@@ -528,6 +502,33 @@ main ul li a svg {
 
 /* API */
 
+#results {
+    font-family: Arial, sans-serif;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.artists-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 2rem;
+    display: block;
+}
+
+.artist-item {
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
 .api-heading {
     text-align: center;
     margin-bottom: 1.5rem;
@@ -537,8 +538,6 @@ main ul li a svg {
     font-size: 1.1rem;
     text-align: justify;
     margin-bottom: 2rem;
-    padding-left: 100px;
-    padding-right: 100px;
 }
 
 .artistForm-container {
