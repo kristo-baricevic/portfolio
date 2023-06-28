@@ -84,16 +84,6 @@ body {
   font-size: 0.875rem;
   color: #718096;
 }
-In this updated code, the .repo-container is modified to have a horizontal scroll using overflow-x: auto; and flex-wrap: nowrap;. This ensures that the repo articles are displayed in a single row, and if there are more articles than the available space, the user can scroll horizontally to view them.
-
-Again, you can adjust the card width (flex: 0 0 300px;) and other styles according to your preference for a more presentable look.
-
-
-
-
-
-
-
 
 .repo-article:hover {
   background-color: #f0f0f0;
@@ -682,11 +672,6 @@ footer {
 /* Media query for smaller screens */
 @media screen and (max-width: 840px) {
 
-.repo-container {
-    max-width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
 .work-details {
   display: flex;
@@ -727,6 +712,15 @@ body {
     padding: 10px;
  }
 
+.repo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .repo-article {
+    width: 100%;
+    max-width: 400px;
+  }
 .rounded-image-wrapper {
     max-width: 250px;
     max-height: 250px;
