@@ -40,7 +40,8 @@ body {
 .repo-container {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  align-items: center;
+  gap: 1rem;
 }
 
 .repo-title {
@@ -56,11 +57,10 @@ body {
   color: #718096;
 }
 
+
 .repo-article {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  max-width: 400px; /* Adjust the max-width as per your preference */
   padding: 1.5rem;
   background-color: #ffffff;
   border: 1px solid #e2e8f0;
@@ -69,6 +69,31 @@ body {
   transition: transform 0.3s ease-in-out;
   text-align: center;
 }
+
+.repo-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: underline;
+  text-decoration-color: #ed64a6;
+  margin-top: 1rem;
+}
+
+.repo-description {
+  margin-top: 0.5rem;
+  width: 80%;
+  font-size: 0.875rem;
+  color: #718096;
+}
+In this updated code, the .repo-container is modified to have a horizontal scroll using overflow-x: auto; and flex-wrap: nowrap;. This ensures that the repo articles are displayed in a single row, and if there are more articles than the available space, the user can scroll horizontally to view them.
+
+Again, you can adjust the card width (flex: 0 0 300px;) and other styles according to your preference for a more presentable look.
+
+
+
+
+
+
+
 
 .repo-article:hover {
   background-color: #f0f0f0;
@@ -236,6 +261,11 @@ body {
   stroke: currentColor;
 }
 
+.repo-title {
+  font-size: 24px;  /* Adjust the font size as per your preference */
+  font-weight: bold;
+  margin-top: 30px;  /* Adjust the top margin as per your preference */
+}
 
 /* Style the header and navigation */
 header {
@@ -356,6 +386,10 @@ img {
   border-radius: 1rem;
   border: 1px solid #e2e8f0;
   padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
 }
 
 .form-heading,
@@ -648,6 +682,12 @@ footer {
 /* Media query for smaller screens */
 @media screen and (max-width: 840px) {
 
+.repo-container {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
 .work-details {
   display: flex;
   flex-direction:column;
@@ -663,7 +703,6 @@ footer {
   padding-bottom: 10px;
  }
 }
-@media screen and (max-width: 767px) {
 
 main{
     max-width: 100%;
