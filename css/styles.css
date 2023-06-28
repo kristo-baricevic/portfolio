@@ -336,8 +336,8 @@ img {
 }
 
 .rounded-image-wrapper {
-    width: 400px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
     overflow: hidden;
     border-radius: 10px;
     position: relative;
@@ -700,6 +700,7 @@ main{
 
 .column {
     width: 100%;
+    align-items: center;
  }
 }
 
@@ -721,9 +722,30 @@ body {
     width: 100%;
     max-width: 400px;
   }
-.rounded-image-wrapper {
-    max-width: 250px;
-    max-height: 250px;
- }
-
 }
+
+@media only screen and (max-width: 400px) {
+  .rounded-image-wrapper {
+    width: 100%;
+    max-width: 300px;
+    height: 220px; /* Adjust this value to control the height of the rounded image wrapper */
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .rounded-image {
+    width: 100%;
+    margin-top: 40px;
+    height: auto;
+    object-fit: cover;
+    position: absolute;
+    top: 50%; /* Adjust this value to move the image vertically */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Adjust this value to move the image vertically */
+  }
+}
+
+
+
+
