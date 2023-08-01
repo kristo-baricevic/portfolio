@@ -26,8 +26,9 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     max-width: 500px;
+    margin: 0 auto;
 }
 
 .small-profile-photo {
@@ -542,6 +543,36 @@ img {
     margin-bottom: 1rem;
 }
 
+.traits-list {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 0;
+}
+
+.traits-list-item {
+  margin: 10px 0;
+}
+
+.about-me-main {
+}
+
+.about-main-container {
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-main-container h1,
+.about-main-container p {
+  text-align: center;
+}
 
 
 /* Social Links */
