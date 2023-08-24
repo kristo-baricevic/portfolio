@@ -40,7 +40,6 @@ body{
   height: auto;
   object-fit: cover;
   filter: brightness(70%) contrast(120%) grayscale(20%); /* Adjust filter values as needed */
-
 }
 
 
@@ -565,9 +564,6 @@ a{
      grid-template-columns: 1fr;
    }
     img:not(.fixed-height) {
-        margin-left: 20px;
-        max-width: 70%;
-        height: auto;
     }
  }
  @media (min-width:993px){
@@ -656,6 +652,13 @@ a{
     }
 }
  @media (max-width:600px){
+    .image-container {
+        max-width: 100px;
+        max-height: 100px;
+      }
+
+      .circular-image {
+        }
     .w3-modal-content{
         margin:0 10px;
         width:auto!important
