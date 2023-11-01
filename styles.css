@@ -50,25 +50,30 @@ summary{
     display:inline-block
 }
 .projects-container {
- }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
-.project-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  grid-gap: 10px;
-  margin: 0 auto;
-  max-width: 800px;
+.project-list {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: none;
 }
 
 .project {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  border: 0px;
-  padding: 20px;
+    margin: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0px;
+    padding: 20px;
+    max-width: 600px;
 }
 
 .project img {
