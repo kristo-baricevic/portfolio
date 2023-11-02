@@ -56,8 +56,11 @@ body{
     transition: opacity 0.3s;
   }
   
-  .relative .absolute {
-    transition: opacity 0.3s; /* Transition when leaving hover */
+  .relative:not(:hover) .absolute {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.3s;
   }
   
 
