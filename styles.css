@@ -39,9 +39,27 @@ body{
   max-width: 100%;
   height: auto;
   object-fit: cover;
-  filter: brightness(70%) contrast(120%) grayscale(20%); /* Adjust filter values as needed */
+  filter: brightness(70%) contrast(120%) grayscale(20%);
 }
 
+.relative .absolute {
+    opacity: 0;
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.5s;
+  }
+  
+  .relative:hover .absolute {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 1;
+    transition: opacity 0.3s;
+  }
+  
+  .relative .absolute {
+    transition: opacity 0.3s; /* Transition when leaving hover */
+  }
+  
 
 summary{
     display:list-item

@@ -1,230 +1,229 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Kristo Baricevic Resume</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 12px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="w3-black">
 
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>PROJECTS</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-  <a href="https://www.linkedin.com/in/kristobaricevic/" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-linkedin w3-xxlarge"></i>
-    <p>LINKEDIN</p>
-  </a>
-  <a href="https://github.com/kristo-baricevic/" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-github w3-xxlarge"></i>
-    <p>GITHUB</p>
-  </a>
-</nav>
+<body class="bg-fixed bg-gradient-to-b from-gray-900 via-gray-700 to-white text-white">
 
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small" style="display: flex; justify-content: space-evenly;">
-    <a href="#" class="w3-bar-item w3-button">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button">PROJECTS</a>
-    <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
-    <a href="https://www.linkedin.com/in/kristobaricevic/" class="w3-bar-item w3-button">LINKEDIN</a>
-    <a href="https://github.com/kristo-baricevic/" class="w3-bar-item w3-button">GITHUB</a>
-  </div>
-</div>
-
-<!-- Page Content -->
-<!-- Header/Home -->
-<div class="main-padding">
-  <div id="main">
-    <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-      <h1 class="w3-jumbo">Kristo Baricevic</h1>
-      <p>Web & Software Developer.</p>
-      <br>
-      <br>
-      <div class="image-container">
-        <img src="images/KristoB_1.jpeg" alt="professional photo" class="circular-image">
+  <div>
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="fixed px-10 top-0 left-0 w-full bg-gray-900 bg-opacity-50">
+      <div class="flex justify-between p-2">
+        <a href="#" class="text-white">HOME</a>
+        <a href="#about" class="text-white hover:bg-slate-200">ABOUT</a>
+        <a href="#photos" class="text-white hover:bg-slate-200">PROJECTS</a>
+        <a href="#contact" class="text-white hover:bg-slate-200">CONTACT</a>
       </div>
-    </header>
-
-
-    <!-- About Section -->
-    <div class="w3-content w3-justify w3-text-white w3-padding-64" id="about">
-      <hr style="width:200px" class="w3-opacity">
-      <p> Dynamic software developer proficient in Java, JavaScript, React, C#, .NET, SQL, and NoSQL. Passionate about contributing to challenging projects, identifying process blocks and improving systems, and optimizing application performance. Proficient in database management, software design, and deployment. Growth-oriented and experienced problem solver. Seeking an opportunity to grow and contribute as a valuable team member.
-
-      </p>
-      <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-      <h2>Java || JavaScript || SQL || NoSQL || TypeScript || React || Next.Js || Express || HTML\CSS + More!</h2>
-      <br>
-      <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-        <div class="w3-quarter w3-section">
-          <img src="/images/creativity.png" class="fixed-height" /><br>
-          Versatility
-        </div>
-        <div class="w3-quarter w3-section">
-          <img src="/images/support.png" class="fixed-height" /><br>
-          Teamwork
-        </div>
-        <div class="w3-quarter w3-section">
-          <img src="/images/positive-vote.png" class="fixed-height" /><br>
-          Positivity
-        </div>
-        <div class="w3-quarter w3-section">
-          <img src="/images/economy.png" class="fixed-height" /><br>
-          Results
-        </div>
-      </div>
-
-      <center>
-        <a href="BaricevicResume.pdf" download="BaricevicResume.pdf">
-          <button class="w3-button w3-light-grey w3-padding-large w3-section">
-            <i class="fa fa-download"></i> Download Resume
-          </button></a>
-      </center>
-
     </div>
 
-    <!-- Portfolio Section -->
-    <div class="projects-container">
-      <h2 class="w3-text-light-grey">Projects</h2>
-      <hr style="width:500px;">
-      <div class="projects-list">
-      <!-- Grid for photos -->
+    <!-- Page Content -->
+    <!-- Header/Home -->
+    <div class="flex flex-col justify-center align-middle">
+      <div id="flex main">
+        <header class="p-8 text-center" id="home">
+        <h1 class="text-6xl font-bold">Kristo Baricevic</h1>
+        <p class="text-xl">Web & Software Developer</p>
+        <br>
+        <br>
+        <div class="image-container">
+          <img src="images/KristoB_1.jpeg" alt="professional photo" class="circular-image">
+        </div>
+        </header>
 
-        <div class ="project">
-          <h3>AI-Enhanced Dream Analysis</h3>
-          <h5>Next.Js with React Typescript</h5>
-          <h5>SQL || Typescript || OpenAI API || LangChain || Next.Js</h5>
-          <a href="https://dream-with-ai.com/">
-            <div class="w3-half">
-              <img src="images/dream_site.jpg">
+        <div class="flex flex-wrap px-16">
+          <!-- About Section -->
+          <div class="bg-white rounded-2xl shadow-2xl">
+            <div class="flex flex-wrap p-14 text-black" id="about">
+              <hr class="w-32 mb-4 opacity-25">
+              <p>Dynamic software developer proficient in Java, JavaScript, React, C#, .NET, SQL, and NoSQL. Passionate about contributing to challenging projects, identifying process blocks and improving systems, and optimizing application performance. Proficient in database management, software design, and deployment. Growth-oriented and experienced problem solver. Seeking an opportunity to grow and contribute as a valuable team member.</p>
+              <h3 class="mt-8 text-light-grey">My Skills</h3>
+              <h2>Java || JavaScript || SQL || NoSQL || TypeScript || React || Next.Js || Express || HTML/CSS + More!</h2>
+              <br>
+              <div class="grid grid-cols-4 gap-4 text-center w-full">
+                <div class="w-1/4">
+                  <img src="/images/creativity.png" alt="Versatility" />
+                  <p>Versatility</p>
+                </div>
+                <div class="w-1/4">
+                  <img src="/images/support.png" alt="Teamwork" />
+                  <p>Teamwork</p>
+                </div>
+                <div class="w-1/4">
+                  <img src="/images/positive-vote.png" alt="Positivity" />
+                  <p>Positivity</p>
+                </div>
+                <div class="w-1/4">
+                  <img src="/images/economy.png" alt="Results" />
+                  <p>Results</p>
+                </div>
+              </div>
+              <div class="text-center mt-8">
+                <a href="BaricevicResume.pdf" download="BaricevicResume.pdf">
+                  <button class="bg-gray-300 text-black p-4 rounded-full">
+                    <i class="fa fa-download"></i> Download Resume
+                  </button>
+                </a>
+              </div>
             </div>
-          </a>
+          </div>
         </div>
 
-        <div class="project">
-          <h3>Outfit Selector App</h3>
-          <h5>MERN || AWS Hosting || Redux & Redux-Toolkit </h5>
-          <a href="https://kristos-closet.vercel.app/">
-            <div class="w3-half">
-              <img src="images/closetapp.jpeg">
-            </div>
-          </a>
+      <!-- Portfolio Section -->
+      <div class="projects-container flex px-12">
+        <h2 class="text-light-grey text-4xl">Projects</h2>
+        <hr class="w-96 opacity-25">
+        <div class="projects-list flex flex-wrap gap-4 mt-4">
+
+          <!-- Project 1 -->
+          <div>
+            <a href="https://dream-with-ai.com">
+              <div class="relative">
+                <img class="h-full rounded-2xl -z-1" src="images/dream_site.jpg" alt="Dream Analysis">
+                
+                <!-- Hidden content (h3 and h5) -->
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="text-2xl text-black">AI-Enhanced Dream Analysis</h3>
+                  <h5 class="text-lg text-black">Next.Js with React Typescript</h5>
+                  <h5 class="text-lg text-black">SQL || Typescript || OpenAI API || LangChain || Next.Js</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+             
+
+          <!-- Project 2 -->      
+          <div>
+            <a href="https://kristos-closet.vercel.app">
+              <div class="relative">
+                <img class="h-full rounded-2xl -z-1" src="images/closetapp.jpeg" alt="Closet App">
+                
+                <!-- Hidden content (h3 and h5) -->
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="text-2xl text-black">Outfit Selector App</h3>
+                  <h5 class="text-lg text-black">MERN || AWS Hosting || Redux & Redux-Toolkit</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 3 -->     
+          <div>
+            <a href="https://chatbot-ui-git-main-kristo-baricevic.vercel.app">
+              <div class="relative">
+                <img class="h-full rounded-2xl -z-1" src="images/chatbog.jpg" alt="AI-Enhanced Chatbot">
+                
+                <!-- Hidden content (h3 and h5) -->
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="text-2xl text-black">AI-Enhanced Chatbot</h3>
+                  <h5 class="text-lg text-black">Next.Js with React Typescript</h5>
+                  <h5 class="text-lg text-black">Typescript || OpenAI API || LangChain || Next.Js</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 4 -->
+          <div>
+            <a href="https://bobreuterphotoarchive.vercel.app">
+              <div class="relative">
+                <img class="h-full rounded-2xl -z-1" src="images/BOB_Archive.png" alt="Photography Archive">
+                
+                <!-- Hidden content (h3 and h5) -->
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="text-2xl text-black">Bob Reuter Photography Archive</h3>
+                  <h5 class="text-lg text-black">MERN Stack</h5>
+                  <h5 class="text-lg text-black">Interactive Keyword Button Search</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 5 -->
+          <div>
+            <a href="https://bigmuddyrecords.com">
+              <div class="relative">
+                <img class="h-full rounded-2xl -z-1" src="images/BMR_Website.png" alt="Big Muddy Records">
+                
+                <!-- Hidden content (h3 and h5) -->
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="text-2xl text-black">Big Muddy Records</h3>
+                  <h5 class="text-lg text-black">HTML/CSS/WordPress</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Project 6 -->
+          <div>
+            <a href="http://productpal-production.up.railway.app">
+              <div class="relative">
+                <img class="h-full rounded-2xl -z-1" src="images/product_pal.png" alt="Product Pal">
+                
+                <!-- Hidden content (h3 and h5) -->
+                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="text-2xl text-black">Product Pal - Inventory Management</h3>
+                  <h5 class="text-lg text-black">Java Spring Boot MVC</h5>
+                  <h5 class="text-lg text-black">SQL || JavaMailAPI</h5>
+                </div>
+              </div>
+            </a>
+          </div>
+
         </div>
-
-
-        <div class ="project">
-          <h3>AI-Enhanced Chatbot</h3>
-          <h5>Next.Js with React Typescript</h5>
-          <h5>Typescript || OpenAI API || LangChain || Next.Js</h5>
-          <a href="https://chatbot-ui-git-main-kristo-baricevic.vercel.app/">
-            <div class="w3-half">
-              <img src="images/chatbog.jpg">
-            </div>
-          </a>
-        </div>
-
-        <div class="project">
-          <h3>Bob Reuter Photography Archive</h3>
-          <h5>MERN Stack</h5>
-          <h5>Interactive Keyword Button Search</h5>
-          <a href="https://bobreuterphotoarchive.vercel.app/">
-            <div class="w3-half">
-              <img src="images/BOB_Archive.png">
-            </div>
-          </a>
-        </div>
-
-        <div class="project">
-          <h3>Big Muddy Records</h3>
-          <h5>HTML/CSS/WordPress</h5>
-          <a href="https://bigmuddyrecords.com/">
-            <div class="w3-half">
-              <img src="images/BMR_Website.png">
-            </div>
-          </a>
-        </div>
-
-        <div class="project">
-          <h3>Product Pal - Inventory Management</h3>
-          <h5>Java Spring Boot MVC</h5>
-          <h5>SQL || JavaMailAPI</h5>
-          <a href="http://productpal-production.up.railway.app">
-            <div class="w3-half">
-              <img src="images/product_pal.png">
-            </div>
-          </a>
-        </div>
-
-<!--        <div class="project">-->
-<!--          <h3>Java Spring Boot Template</h3>-->
-<!--          <h5>Java Spring Boot MVC</h5>-->
-<!--          <h5>SQL || Javascript APIs including Carousels, Modals and Lazy Loaders</h5>-->
-<!--          <a href="https://etbs.up.railway.app/">-->
-<!--            <div class="w3-half">-->
-<!--              <img src="images/ETBSthumb.jpeg">-->
-<!--            </div>-->
-<!--          </a>-->
-<!--        </div>-->
-
-        <!-- End photo grid -->
       </div>
       <!-- End Portfolio Section -->
     </div>
 
     <!-- Contact Section -->
-    <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-      <h2 class="w3-text-light-grey">Contact Me</h2>
-      <hr style="width:200px" class="w3-opacity">
-
-      <div class="w3-section">
-        <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Philadelphia, PA</p>
-        <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: kristo.baricevic@gmail.com </p>
-      </div><br>
-      <p>Let's get in touch. Send me a message with the form below or click here to use your own e-mail client.</p>
+    <div class="flex p-64 text-grey" id="contact">
+      <h2 class="text-light-grey text-4xl">Contact Me</h2>
+      <hr class="w-32 mb-4 opacity-25">
+      <div class="mt-4">
+        <p><i class="fa fa-map-marker fa-fw text-white text-3xl mr-4"></i> Philadelphia, PA</p>
+        <p><i class="fa fa-envelope fa-fw text-white text-3xl mr-4"></i> Email: kristo.baricevic@gmail.com</p>
+      </div>
       <!-- End Contact Section -->
     </div>
 
-    <!-- Footer -->
-    <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-      <a href="https://www.linkedin.com/in/kristobaricevic/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-      <a href="https://github.com/kristo-baricevic/"><i class="fa fa-github w3-hover-opacity"></i></a><!-- End footer -->
-
+    <div>
+      <!-- Footer -->
+      <footer class="p-64 text-grey text-4xl">
+        <a href="https://www.linkedin.com/in/kristobaricevic/"><i class="fa fa-linkedin w-12 h-12 hover:opacity-75"></i></a>
+        <a href="https://github.com/kristo-baricevic/"><i class="fa fa-github w-12 h-12 hover:opacity-75"></i></a>
+      </footer>
       <!-- End footer -->
-    </footer>
-
-    <!-- END PAGE CONTENT -->
+    </div>
   </div>
-</div>
+
+  <script>
+    const relative = document.querySelector('.relative');
+
+    document.querySelectorAll('.relative').forEach((relative) => {
+    relative.addEventListener('mouseenter', () => {
+      const hidden = relative.querySelector('.absolute');
+      hidden.style.opacity = 1;
+      hidden.style.pointerEvents = 'auto';
+      hidden.style.zIndex = 1;
+    });
+
+    relative.addEventListener('mouseleave', () => {
+    const hidden = relative.querySelector('.absolute');
+    hidden.style.opacity = 0;
+    hidden.style.pointerEvents = 'none';
+    hidden.style.zIndex = -1;
+  });
+});
+
+  </script>
+  
 </body>
+
 </html>
