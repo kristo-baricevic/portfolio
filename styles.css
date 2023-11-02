@@ -6,17 +6,17 @@
     box-sizing:inherit
 }
 /* Extract from normalize.css by Nicolas Gallagher and Jonathan Neal git.io/normalize */
- html{
+html{
     -ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%
 }
+
 body{
     margin:0;
+    font-family: 'Oswald', sans-serif;
 }
-#main {margin-left: 120px}
- article,aside,details,figcaption,figure,footer,header,main,menu,nav,section{
-    display:block
-}
+
+
 .main-padding{
     padding: 20px;
 }
@@ -57,6 +57,7 @@ body{
   }
   
   .relative:not(:hover) .absolute {
+    font-family: 'Oswald', sans-serif;
     opacity: 0;
     pointer-events: none;
     z-index: -1;
@@ -65,7 +66,8 @@ body{
   
 
 summary{
-    display:list-item
+    display:list-item;
+    font-family: 'Oswald', sans-serif;
 }
  audio,canvas,progress,video{
     display:inline-block
@@ -173,7 +175,6 @@ hr{
     overflow:visible
 }
  button,input,select,textarea,optgroup{
-    font:inherit;
     margin:0
 }
 optgroup{
@@ -201,7 +202,6 @@ button,select{
     padding:.35em .625em .75em
 }
  legend{
-    color:inherit;
     display:table;
     max-width:100%;
     padding:0;
@@ -225,11 +225,9 @@ textarea{
 }
  ::-webkit-file-upload-button{
     -webkit-appearance:button;
-    font:inherit
 }
 /* End extract */
  html,body{
-    font-family:Verdana,sans-serif;
     font-size:15px;
     line-height:1.5
 }
@@ -253,23 +251,6 @@ h5{
 }
 h6{
     font-size:16px
-}
- .w3-serif{
-    font-family:serif
-}
-.w3-sans-serif{
-    font-family:sans-serif
-}
-.w3-cursive{
-    font-family:cursive
-}
-.w3-monospace{
-    font-family:monospace
-}
- h1,h2,h3,h4,h5,h6{
-    font-family:"Segoe UI",Arial,sans-serif;
-    font-weight:400;
-    margin:10px 0
 }
 .w3-wide{
     letter-spacing:4px
@@ -860,10 +841,6 @@ a{
 .w3-panel{
     margin-top:16px;
     margin-bottom:16px
-}
- .w3-code,.w3-codespan{
-    font-family:Consolas,"courier new";
-    font-size:16px
 }
  .w3-code{
     width:auto;

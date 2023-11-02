@@ -6,7 +6,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
@@ -28,62 +31,69 @@
     <!-- Header/Home -->
     <div class="flex flex-col justify-center align-middle">
       <div id="flex flex-col justify-center align-middle main">
-        <div class="flex justify-center align-middle py-10">
-          <header class="p-8 text-center" id="home">
+        <div class="flex justify-center align-middle py-6">
+          <header class="p-4 text-center" id="home">
             <h1 class="text-6xl font-bold">Kristo Baricevic</h1>
             <p class="text-xl p-4">Web & Software Developer</p>
             <div class="image-container">
               <img src="images/KristoB_1.jpeg" alt="professional photo" class="circular-image">
             </div>
+            <div class="p-2 text-grey text-4xl">
+              <a href="https://www.linkedin.com/in/kristobaricevic/">
+                <i class="fa fa-linkedin w-12 h-12 hover:opacity-75"></i>
+              </a>
+              <a href="https://github.com/kristo-baricevic/">
+                <i class="fa fa-github w-12 h-12 hover:opacity-75"></i>
+              </a>
+            </div>
           </header>
+          </div>
       </div>
 
-
-        <div class="flex flex-wrap px-16">
+        <div class="flex flex-wrap px-6">
           <!-- About Section -->
-          <div class="flex justify-center align-middle bg-white rounded-2xl shadow-2xl border-4 border-solid border-blue-300">
-            <div class="flex justify-center align-middle flex-wrap p-14 text-black" id="about">
-              <hr class="w-32 mb-4 opacity-25">
-              <div class="flex flex-wrap py-2">
-                <p>Dynamic software developer proficient in Java, JavaScript, React, C#, .NET, SQL, and NoSQL. Passionate about contributing to challenging projects, identifying process blocks and improving systems, and optimizing application performance. Proficient in database management, software design, and deployment. Growth-oriented and experienced problem solver. Seeking an opportunity to grow and contribute as a valuable team member.</p>
-              </div>
-              <div class="flex flex-wrap justify-center align-middle py-4">
-                <h2 class="text-xl">Java || JavaScript || SQL || NoSQL || TypeScript || React || Next.Js || Express || HTML/CSS</h2>
-              </div>
-              <div class="flex flex-wrap justify-center align-middle w-full bg-blue-100 rounded-2xl shadow-md">
-                <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4">
-                  <img src="images/creativity.png" alt="Versatility" />
-                  <p>Versatility</p>
+          <div class="flex justify-center align-middle w-fit bg-white rounded-2xl shadow-2xl border-4 border-solid border-blue-300">
+            <div class="flex justify-center align-middle flex-wrap p-4 text-black" id="about">
+              <div class="flex flex-col justify-center align-middle">
+                <div class="flex flex-wrap justify-center align-middle py-4 px-2">
+                  <h2 class="text-xl">Java || JavaScript || SQL || NoSQL || TypeScript || React || React Redux || Next.Js || Express || OpenAI API || LangChain || HTML/CSS</h2>
                 </div>
-                <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4">
-                  <img src="images/support.png" alt="Teamwork" />
-                  <p>Teamwork</p>
+                <div class="flex flex-wrap justify-center align-middle bg-blue-100 rounded-2xl shadow-md">
+                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-200 rounded-2xl">
+                    <img src="images/creativity.png" alt="Versatility" />
+                    <p>Versatility</p>
+                  </div>
+                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-300 rounded-2xl">
+                    <img src="images/support.png" alt="Teamwork" />
+                    <p>Teamwork</p>
+                  </div>
+                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-400 rounded-2xl">
+                    <img src="images/positive-vote.png" alt="Positivity" />
+                    <p>Positivity</p>
+                  </div>
+                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-500 rounded-2xl">
+                    <img src="images/economy.png" alt="Results" />
+                    <p>Results</p>
+                  </div>
                 </div>
-                <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4">
-                  <img src="images/positive-vote.png" alt="Positivity" />
-                  <p>Positivity</p>
+                <div class="flex justify-center text-center mt-8">
+                  <a href="BaricevicResume.pdf" download="BaricevicResume.pdf">
+                    <button class="bg-gray-300 text-black p-4 rounded-full hover:bg-blue-300 shadow-md">
+                      <i class="fa fa-download"></i> Download Resume
+                    </button>
+                  </a>
                 </div>
-                <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4">
-                  <img src="images/economy.png" alt="Results" />
-                  <p>Results</p>
-                </div>
-              </div>
-              <div class="text-center mt-8">
-                <a href="BaricevicResume.pdf" download="BaricevicResume.pdf">
-                  <button class="bg-gray-300 text-black p-4 rounded-full hover:bg-blue-300 shadow-md">
-                    <i class="fa fa-download"></i> Download Resume
-                  </button>
-                </a>
               </div>
             </div>
           </div>
         </div>
 
       <!-- Portfolio Section -->
-      <div class="projects-container flex flex-wrap justify-center align-middle px-12" id="projects">
+      <div class="projects-container flex flex-wrap justify-center align-middle py-6" id="projects">
         
+          <hr class="w-24 opacity-25">
           <h2 class="text-light-grey text-4xl py-4">Projects</h2>
-          <hr class="w-96 opacity-25">
+          <hr class="w-24 opacity-25">
 
         <div class="justify-center align-middle projects-list flex flex-wrap gap-4 mt-4">
           <!-- Project 1 -->
@@ -93,10 +103,10 @@
                 <img class="h-full rounded-2xl -z-1" src="images/dream_site.jpg" alt="Dream Analysis">
                 
                 <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="text-2xl text-black">AI-Enhanced Dream Analysis</h3>
-                  <h5 class="text-lg text-black">Next.Js with React Typescript</h5>
-                  <h5 class="text-lg text-black">SQL || Typescript || OpenAI API || LangChain || Next.Js</h5>
+                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h4 class="flex justify-center text-2xl text-black">AI-Enhanced Dream Analysis</h3>
+                  <h5 class="flex justify-center text-lg text-black">Next.Js with React Typescript</h5>
+                  <h5 class="flex justify-center text-lg text-black">SQL || Typescript || OpenAI API || LangChain || Next.Js</h5>
                 </div>
               </div>
             </a>
@@ -107,28 +117,28 @@
           <div class="flex max-w-xl py-4 px-4">
             <a href="https://kristos-closet.vercel.app">
               <div class="relative">
-                <img class="h-full rounded-2xl -z-1" src="images/closetapp.jpeg" alt="Closet App">
+                <img class="h-full rounded-2xl -z-1" src="images/closetNov.jpeg" alt="Closet App">
                 
                 <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="text-2xl text-black">Outfit Selector App</h3>
-                  <h5 class="text-lg text-black">MERN || AWS Hosting || Redux & Redux-Toolkit</h5>
+                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="flex justify-center text-2xl text-black">Outfit Selector App</h3>
+                  <h5 class="flex justify-center text-lg text-black">MERN || AWS Image Hosting || Digital Ocean Droplet || Redux & Redux-Toolkit</h5>
                 </div>
               </div>
             </a>
           </div>
 
           <!-- Project 3 -->     
-          <div class="flex max-w-md py-4 px-4">
+          <div class="flex max-w-xl py-4 px-4">
             <a href="https://chatbot-ui-git-main-kristo-baricevic.vercel.app">
               <div class="relative">
-                <img class="h-full rounded-2xl -z-1" src="images/chatbog.jpg" alt="AI-Enhanced Chatbot">
+                <img class="h-full rounded-2xl -z-1" src="images/Chatbot.png" alt="AI-Enhanced Chatbot">
                 
                 <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="text-2xl text-black">AI-Enhanced Chatbot</h3>
-                  <h5 class="text-lg text-black">Next.Js with React Typescript</h5>
-                  <h5 class="text-lg text-black">Typescript || OpenAI API || LangChain || Next.Js</h5>
+                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="flex justify-center text-2xl text-black">AI-Enhanced Chatbot</h3>
+                  <h5 class="flex justify-center text-lg text-black">Next.Js with React Typescript</h5>
+                  <h5 class="flex justify-center text-lg text-black">Typescript || OpenAI API || LangChain || Next.Js</h5>
                 </div>
               </div>
             </a>
@@ -141,25 +151,26 @@
                 <img class="h-full rounded-2xl -z-1" src="images/BOB_Archive.png" alt="Photography Archive">
                 
                 <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="text-2xl text-black">Bob Reuter Photography Archive</h3>
-                  <h5 class="text-lg text-black">MERN Stack</h5>
-                  <h5 class="text-lg text-black">Interactive Keyword Button Search</h5>
+                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="flex justify-center text-2xl text-black">Bob Reuter Photography Archive</h3>
+                  <h5 class="flex justify-center text-lg text-black">MERN Stack</h5>
+                  <h5 class="flex justify-center text-lg text-black">Interactive Keyword Button Search</h5>
                 </div>
               </div>
             </a>
           </div>
 
-          <!-- Project 5 -->
-          <div class="flex max-w-xl py-4 px-4">
-            <a href="https://bigmuddyrecords.com">
+           <!-- Project 5 -->
+           <div class="flex max-w-xl py-4 px-4">
+            <a href="http://productpal-production.up.railway.app">
               <div class="relative">
-                <img class="h-full rounded-2xl -z-1" src="images/BMR_Website.png" alt="Big Muddy Records">
+                <img class="h-full rounded-2xl -z-1" src="images/product_pal.png" alt="Product Pal">
                 
                 <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="text-2xl text-black">Big Muddy Records</h3>
-                  <h5 class="text-lg text-black">HTML/CSS/WordPress</h5>
+                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="flex justify-center text-black">Product Pal - Inventory Management</h3>
+                  <h5 class="flex justify-center text-lg text-black">Java Spring Boot MVC</h5>
+                  <h5 class="flex justify-center text-lg text-black">SQL || JavaMailAPI</h5>
                 </div>
               </div>
             </a>
@@ -167,19 +178,20 @@
 
           <!-- Project 6 -->
           <div class="flex max-w-xl py-4 px-4">
-            <a href="http://productpal-production.up.railway.app">
+            <a href="https://bigmuddyrecords.com">
               <div class="relative">
-                <img class="h-full rounded-2xl -z-1" src="images/product_pal.png" alt="Product Pal">
+                <img class="h-full rounded-2xl -z-1" src="images/BMR_Website.png" alt="Big Muddy Records">
                 
                 <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="text-2xl text-black">Product Pal - Inventory Management</h3>
-                  <h5 class="text-lg text-black">Java Spring Boot MVC</h5>
-                  <h5 class="text-lg text-black">SQL || JavaMailAPI</h5>
+                <div class="flex justify-center absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
+                  <h3 class="flex justify-center text-2xl text-black">Big Muddy Records</h3>
+                  <h5 class="flex justify-center text-lg text-black">HTML/CSS/WordPress</h5>
                 </div>
               </div>
             </a>
           </div>
+
+         
 
         </div>
       </div>
