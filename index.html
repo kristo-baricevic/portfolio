@@ -1,312 +1,743 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Kristo Baricevic || Portfolio</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristo Baricevic || Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: #fafafa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(0, 0, 0, 0.8);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fafafa;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #fafafa;
+        }
+
+        /* Main content */
+        .main-content {
+            margin-top: 64px;
+        }
+
+        /* Hero section */
+        .hero {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 128px 2rem 96px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 9999px;
+            font-size: 12px;
+            margin-bottom: 24px;
+            animation: fadeIn 1s ease 0s forwards;
+            opacity: 0;
+        }
+
+        .hero-title {
+            font-size: 96px;
+            line-height: 1;
+            font-weight: 500;
+            letter-spacing: -4.8px;
+            margin-bottom: 24px;
+            background: linear-gradient(to right bottom, #ffffff 30%, rgba(255, 255, 255, 0.4));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeIn 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #9ca3af;
+            letter-spacing: -0.5px;
+            margin-bottom: 48px;
+            animation: fadeIn 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 32px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            color: #fafafa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.03);
+        }
+
+        .hero-cta:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-1px);
+        }
+
+        /* Dashboard preview */
+        .dashboard-preview {
+            margin-top: 128px;
+            position: relative;
+            animation: fadeUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        .dashboard-container {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .dashboard-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Tech stack section */
+        .tech-stack {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 96px 2rem;
+            text-align: center;
+        }
+
+        .tech-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 32px;
+        }
+
+        .tech-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 32px;
+        }
+
+        .tech-subtitle {
+            font-size: 20px;
+            color: #9ca3af;
+            max-width: 768px;
+            margin: 0 auto 48px;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .tech-card {
+            background: rgba(0, 0, 0, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
+        }
+
+        .tech-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .tech-card h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #d4d4d8;
+            margin-bottom: 12px;
+        }
+
+        .tech-card p {
+            color: #a3a3a3;
+            margin-bottom: 16px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tech-tag {
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 12px;
+            color: #e5e5e5;
+        }
+
+        /* Projects section */
+        .projects {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 96px 2rem;
+        }
+
+        .projects-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .projects-title {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            background: rgba(0, 0, 0, 1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: inset 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #d4d4d8;
+            margin-bottom: 8px;
+        }
+
+        .project-description {
+            color: #a3a3a3;
+            margin-bottom: 16px;
+            font-size: 14px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+
+        .project-tech-tag {
+            padding: 4px 8px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            font-size: 12px;
+            color: #e5e5e5;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #fafafa;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .project-link:hover {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Code viewer */
+        .code-viewer {
+            background: rgba(0, 0, 0, 1);
+            border: 1px solid #272729;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 16px 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 12px;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+
+        .code-viewer .key {
+            color: #88c6be;
+        }
+
+        .code-viewer .string {
+            color: #00ff83;
+        }
+
+        .code-viewer .number {
+            color: #d54e53;
+        }
+
+        .code-viewer .bracket {
+            color: #236a7c;
+        }
+
+        /* Contact section */
+        .contact {
+            background: rgba(0, 0, 0, 1);
+            color: #000;
+            padding: 96px 2rem;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #fafafa;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background: #111827;
+            color: #fafafa;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: #374151;
+            transform: translateY(-1px);
+        }
+
+        .contact-email {
+            color: #6b7280;
+            font-size: 16px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 48px;
+                letter-spacing: -2.4px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .tech-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">Kristo Baricevic</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<body class="bg-fixed bg-gradient-to-b from-gray-900 via-gray-700 to-white text-white" style="font-family: 'Oswald';">
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">            
+            <h1 class="hero-title">Full-Stack Developer</h1>
+            
+            <p class="hero-subtitle">
+                Building modern web applications with JavaScript, TypeScript, React, Python, and AI APIs.<br>
+                Focused on clean code, scalable architecture, and exceptional user experiences.
+            </p>
 
-  <div>
-    <!-- Navbar on small screens (Hidden on medium and large screens) -->
-    <div class="fixed px-10 top-0 left-0 w-full bg-gray-900 bg-opacity-50 z-10">
-      <div class="flex justify-between p-2">
-        <a href="#" class="rounded-lg text-white hover:bg-gray-200 hover:text-black p-2">HOME</a>
-        <a href="#about" class="rounded-lg text-white hover:bg-gray-200 hover:text-black p-2">ABOUT</a>
-        <a href="#projects" class="rounded-lg text-white hover:bg-gray-200 hover:text-black p-2">PROJECTS</a>
-        <a href="#contact" class="rounded-lg text-white hover:bg-gray-200 hover:text-black p-2">CONTACT</a>
-      </div>
-    </div>
+            <a href="BaricevicResume.pdf" download="BaricevicResume.pdf" class="hero-cta">
+              Download My Resume
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" fill="none"/>
+              </svg>
+            </a>
+            
+            <a href="#projects" class="hero-cta">
+                View My Work
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                </svg>
+            </a>
 
-    <!-- Page Content -->
-    <!-- Header/Home -->
-    <div class="flex flex-col justify-center align-middle">
-      <div id="flex flex-col justify-center align-middle main">
-        <div class="flex justify-center align-middle py-6 mt-10">
-          <header class="p-4 text-center" id="home">
-            <h1 class="text-6xl font-bold">Kristo Baricevic</h1>
-            <p class="text-xl p-4" style="font-family: 'Montserrat'";>Web & Software Developer</p>
-            <div class="image-container">
-              <img src="images/KristoB_1.jpeg" alt="professional photo" class="circular-image">
+            <!-- Dashboard Preview -->
+            <div class="dashboard-preview">
+                <div class="dashboard-container">
+                    <div style="padding: 24px; background: rgba(255, 255, 255, 0.02);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
+                            <div style="width: 12px; height: 12px; background: #ff5f57; border-radius: 50%;"></div>
+                            <div style="width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%;"></div>
+                            <div style="width: 12px; height: 12px; background: #28ca42; border-radius: 50%;"></div>
+                        </div>
+                        <div class="code-viewer">
+                            <div><span class="bracket">{</span></div>
+                            <div>&nbsp;&nbsp;<span class="key">"developer"</span>: <span class="string">"Kristo Baricevic"</span>,</div>
+                            <div>&nbsp;&nbsp;<span class="key">"role"</span>: <span class="string">"Full-Stack Developer"</span>,</div>
+                            <div>&nbsp;&nbsp;<span class="key">"experience"</span>: <span class="number">2</span>,</div>
+                            <div>&nbsp;&nbsp;<span class="key">"technologies"</span>: <span class="bracket">[</span></div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"JavaScript"</span>, <span class="string">"TypeScript"</span>, <span class="string">"React"</span>,</div>
+                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Next.js"</span>, <span class="string">"Python"</span>, <span class="string">"Django"</span></div>
+                            <div>&nbsp;&nbsp;<span class="bracket">]</span>,</div>
+                            <div>&nbsp;&nbsp;<span class="key">"currentFocus"</span>: <span class="string">"AI-driven applications"</span>,</div>
+                            <div>&nbsp;&nbsp;<span class="key">"available"</span>: <span style="color: #7aa6da;">true</span></div>
+                            <div><span class="bracket">}</span></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="p-2 text-grey text-4xl">
-              <a href="https://www.linkedin.com/in/kristobaricevic/">
-                <i class="fa fa-linkedin w-12 h-12 hover:text-blue-300"></i>
-              </a>
-              <a href="https://github.com/kristo-baricevic/">
-                <i class="fa fa-github w-12 h-12 hover:text-blue-300"></i>
-              </a>
+        </section>
+
+        <!-- Tech Stack Section -->
+        <section class="tech-stack" id="about">
+            <div class="tech-badge">TECHNOLOGY STACK</div>
+            <h2 class="tech-title">Modern Development Tools</h2>
+            <p class="tech-subtitle">
+                I work with cutting-edge technologies to build scalable, maintainable applications 
+                that solve real-world problems and deliver exceptional user experiences.
+            </p>
+
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <h3>Frontend Development</h3>
+                    <p>Creating responsive, interactive user interfaces with modern frameworks and libraries.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <h3>Backend Development</h3>
+                    <p>Building robust APIs and server-side applications with Python and Node.js.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Django</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                  <h3>DevOps & Infrastructure</h3>
+                  <p>Managing deployment pipelines, containerization, and cloud infrastructure for scalable applications.</p>
+                  <div class="tech-tags">
+                      <span class="tech-tag">Docker</span>
+                      <span class="tech-tag">OrbStack</span>
+                      <span class="tech-tag">Digital Ocean</span>
+                      <span class="tech-tag">Worker Nodes</span>
+                  </div>
+               </div>
+
+                <div class="tech-card">
+                    <h3>AI Integration</h3>
+                    <p>Implementing AI-powered features using OpenAI APIs and machine learning tools.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">LangChain</span>
+                        <span class="tech-tag">TensorFlow</span>
+                        <span class="tech-tag">Python ML</span>
+                    </div>
+                </div>
             </div>
-          </header>
-          </div>
-      </div>
+        </section>
 
-        <div class="flex justify-center flex-wrap px-6">
-          <!-- About Section -->
-          <div class="flex justify-center align-middle w-fit bg-white rounded-2xl shadow-2xl border-4 border-solid border-blue-300">
-            <div class="flex justify-center align-middle flex-wrap p-4 text-black" id="about">
-              <div class="flex flex-col justify-center align-middle">
-                <div class="flex flex-wrap justify-center text-center py-4 px-2">
-                  <h2 class="text-xl" style="font-family: 'Montserrat'">|| JavaScript || TypeScript || React || React Redux || Next.Js || Express || Python || C++ || JAVA || OpenAI API || LangChain || HTML/CSS ||</h2>
-                </div>
-                <div class="flex flex-wrap justify-center align-middle py-4 px-4">
-                  <h2 class="text-xl" style="font-family: 'Montserrat'"></h2>
-                </div>
-                <div class="flex flex-wrap justify-center align-middle bg-blue-100 rounded-2xl shadow-md">
-                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-200 rounded-2xl">
-                    <img src="images/creativity.png" alt="Versatility" />
-                    <p>Versatility</p>
-                  </div>
-                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-300 rounded-2xl">
-                    <img src="images/support.png" alt="Teamwork" />
-                    <p>Teamwork</p>
-                  </div>
-                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-400 rounded-2xl">
-                    <img src="images/positive-vote.png" alt="Positivity" />
-                    <p>Positivity</p>
-                  </div>
-                  <div class="flex flex-col justify-center align-middle max-w-min px-8 py-4 hover:bg-blue-500 rounded-2xl">
-                    <img src="images/economy.png" alt="Results" />
-                    <p>Results</p>
-                  </div>
-                </div>
-                <div class="flex justify-center text-center mt-8">
-                  <a href="BaricevicResume.pdf" download="BaricevicResume.pdf">
-                    <button class="bg-gray-300 text-black p-4 rounded-full hover:bg-blue-300 shadow-md">
-                      <i class="fa fa-download"></i> Download Resume
-                    </button>
-                  </a>
-                </div>
-              </div>
+        <!-- Projects Section -->
+        <section class="projects" id="projects">
+            <div class="projects-header">
+                <h2 class="projects-title">Featured Projects</h2>
             </div>
-          </div>
-        </div>
 
-      <!-- Portfolio Section -->
-      <div class="projects-container flex flex-wrap justify-center align-middle py-6" id="projects">
-        
-          <hr class="w-24 opacity-25">
-          <h2 class="text-light-grey text-4xl py-4">Projects</h2>
-          <hr class="w-24 opacity-25">
-
-        <div class="justify-center align-middle projects-list flex flex-wrap gap-4 mt-4">
-            <!-- Project 1 -->
-            <div class="flex py-4 px-4">
-            <a href="https://callsine.com/">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/Callsine.jpeg" alt="CallSine">
-                
-                <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h4 class="flex justify-center text-2xl text-black">AI-Driven Sales Outreach</h3>
-                  <h5 class="flex justify-center text-lg text-black">Next.Js with React Typescript and Python Django</h5>
-                  <h5 class="flex justify-center text-center text-lg text-black">PostgreSQL, Typescript, Next.Js, Three.Js, Tanstack Tables, Redux Toolkit, Python/Django, Fast API, OpenAI API, LangChain, Docker, Digital Ocean</h5>
+            <div class="projects-grid">
+                <div class="project-card">
+                  <img class="project-image" src="images/Callsine.jpeg" alt="CallSine">
+                    <div class="project-content">
+                        <h3 class="project-title">CallSine - AI Sales Outreach</h3>
+                        <p class="project-description">
+                            AI-driven sales outreach platform built with Next.js, TypeScript, and Python Django. 
+                            Features advanced automation and analytics for sales teams.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Next.js</span>
+                            <span class="project-tech-tag">TypeScript</span>
+                            <span class="project-tech-tag">Python</span>
+                            <span class="project-tech-tag">Django</span>
+                            <span class="project-tech-tag">OpenAI API</span>
+                        </div>
+                        <a href="https://callsine.com/" class="project-link">
+                            View Project
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
 
-
-          <!-- Project 1 -->
-          <div class="flex py-4 px-4">
-            <a href="https://dream-app-nu.vercel.app/">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/dream_app.png" alt="Dream Analysis">
-                
-                <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h4 class="flex justify-center text-2xl text-black">AI-Enhanced Dream Analysis</h3>
-                  <h5 class="flex justify-center text-lg text-black">Next.Js with React Typescript and Python Django</h5>
-                  <h5 class="flex justify-center text-center text-lg text-black">PostgreSQL, Typescript, Next.Js, Python/Django, Fast API, OpenAI API, LangChain, Docker, Digital Ocean</h5>
+                <div class="project-card">
+                  <img class="project-image" src="images/dream_app.png" alt="Dream Analysis">
+                    <div class="project-content">
+                        <h3 class="project-title">Dream Analysis App</h3>
+                        <p class="project-description">
+                            AI-enhanced dream analysis application using machine learning to provide insights 
+                            into dream patterns and meanings.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Next.js</span>
+                            <span class="project-tech-tag">TypeScript</span>
+                            <span class="project-tech-tag">OpenAI API</span>
+                            <span class="project-tech-tag">PostgreSQL</span>
+                        </div>
+                        <a href="https://dream-app-nu.vercel.app/" class="project-link">
+                            View Project
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
 
-          <!-- Project 3 -->
-          <div class="flex py-4 px-4">
-            <a href="https://balancertestsite.com/">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/Balancer.png" alt="Photography Archive">
-                
-                <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="flex justify-center text-2xl text-black">Balancer, A Web-App for Medical Prescribers</h3>
-                  <h5 class="flex justify-center text-lg text-black">React, Typescript, Python\Django, OpenAI API</h5>
-                  <h5 class="flex justify-center text-lg text-black">Medical Assistant For Mental Health Physicians</h5>
+                <div class="project-card">
+                  <img class="project-image"  src="images/Balancer.png" alt="Photography Archive">
+                    <div class="project-content">
+                        <h3 class="project-title">Medical Prescriber Assistant</h3>
+                        <p class="project-description">
+                            Web application for medical professionals to assist with prescription management 
+                            and patient care using AI-driven recommendations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">React</span>
+                            <span class="project-tech-tag">TypeScript</span>
+                            <span class="project-tech-tag">Python</span>
+                            <span class="project-tech-tag">Django</span>
+                        </div>
+                        <a href="https://balancertestsite.com/" class="project-link">
+                            View Project
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
 
-          <!-- Project 3 -->
-          <div class="flex py-4 px-4">
-            <a href="https://bobreuterphotoarchive.vercel.app">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/BOB_Archive.png" alt="Photography Archive">
-                
-                <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="flex justify-center text-2xl text-black">Bob Reuter Photography Archive</h3>
-                  <h5 class="flex justify-center text-lg text-black">MERN Stack</h5>
-                  <!-- <h5 class="flex justify-center text-lg text-black">Interactive Keyword Button Search</h5> -->
+                <div class="project-card">
+                  <img class="project-image" src="images/mediaplayer.png" alt="Photography Archive">
+                  <div class="project-content">
+                        <h3 class="project-title">Multi-Track Media Player</h3>
+                        <p class="project-description">
+                            Advanced media player built with TypeScript and Web Audio API, featuring 
+                            multi-track support and advanced audio controls.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">TypeScript</span>
+                            <span class="project-tech-tag">React</span>
+                            <span class="project-tech-tag">Web Audio API</span>
+                        </div>
+                        <a href="https://kr1st0-music-player.vercel.app/" class="project-link">
+                            View Project
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
 
-          <!-- Project 4 -->
-          <div class="flex py-4 px-4">
-            <a href="https://bigmuddyrecords.com">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/BMR_Website.png" alt="Big Muddy Records">
-                
-                <!-- Hidden content (h3 and h5) -->
-                <div class="flex justify-center absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="flex justify-center text-2xl text-black">Big Muddy Records</h3>
-                  <h5 class="flex justify-center text-lg text-black">HTML/CSS/WordPress</h5>
+                <div class="project-card">
+                  <img class="project-image" src="images/BOB_Archive.png" alt="Photography Archive">
+                    <div class="project-content">
+                        <h3 class="project-title">Bob Reuter Photography Archive</h3>
+                        <p class="project-description">
+                            A very basic MERN app that acts as the digital archive for the late photographer, Bob Reuter.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Mongo DB</span>
+                            <span class="project-tech-tag">Express.Js</span>
+                            <span class="project-tech-tag">React</span>
+                            <span class="project-tech-tag">Node.Js</span>
+                        </div>
+                        <a href="https://bobreuterphotoarchive.vercel.app/" class="project-link">
+                            View Project
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-              </div>
-            </a>
-          </div>
 
-        <!-- Project 5 -->
-        <div class="flex py-4 px-4">
-          <a href="https://github.com/JoshuaKGoldberg/create-typescript-app/">
-            <div class="relative">
-              <img class="h-full rounded-2xl -z-1 max-h-72" src="images/CTypeScript.png" alt="Photography Archive">
-              
-              <!-- Hidden content (h3 and h5) -->
-              <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                <h3 class="flex justify-center text-2xl text-black">Create-TypeScript-App</h3>
-                <h5 class="flex justify-center text-lg text-black">TypeScript, Vitest\Jest</h5>
-                <h5 class="flex justify-center text-lg text-black">An Open Source App for the TypeScript Developers</h5>
-              </div>
+                <div class="project-card">
+                  <img class="project-image" src="images/BMR_Website.png" alt="Big Muddy Records">
+                    <div class="project-content">
+                        <h3 class="project-title">Big Muddy Records Website</h3>
+                        <p class="project-description">
+                            Website for my old record label, which I ran from 2005-2020.
+                        </p>
+                        <div class="project-tech">
+                            <span class="project-tech-tag">Wordpress</span>
+                            <span class="project-tech-tag">HTML</span>
+                            <span class="project-tech-tag">CSS</span>
+                        </div>
+                        <a href="https://bigmuddyrecords.com/" class="project-link">
+                            View Project
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
+                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
             </div>
-          </a>
-        </div>
+        </section>
 
-           <!-- Project 2 -->      
-           <!-- <div class="flex py-4 px-4">
-            <a href="https://kristos-closet.vercel.app">
-              <div class="relative">
-                <img class="rounded-2xl -z-1 max-h-72" src="images/closetNov.jpeg" alt="Closet App">
-                
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="flex justify-center text-2xl text-black">Outfit Selector App</h3>
-                  <h5 class="flex justify-center text-lg text-black">MERN || AWS Image Hosting || Digital Ocean Droplet || Redux & Redux-Toolkit</h5>
-                </div>
-              </div>
-            </a>
-          </div> -->
-
-          <!-- Project 5 -->
-          <div class="flex py-4 px-4">
-            <a href="https://kr1st0-music-player.vercel.app/">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/mediaplayer.png" alt="Photography Archive">
-                
-                <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="flex justify-center text-2xl text-black">Multi-Track Media Player</h3>
-                  <h5 class="flex justify-center text-lg text-black">TypeScript, React, Web Audio API</h5>
-                </div>
-              </div>
-            </a>
-          </div>
-
-           <!-- Project 6 -->     
-           <!-- <div class="flex py-4 px-4">
-            <a href="https://chatbot-ui-git-main-kristo-baricevic.vercel.app">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/Chatbot.png" alt="AI-Enhanced Chatbot">
-                
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="flex justify-center text-2xl text-black">AI-Enhanced Chatbot</h3>
-                  <h5 class="flex justify-center text-lg text-black">Next.Js with React Typescript</h5>
-                  <h5 class="flex justify-center text-lg text-black">Typescript || OpenAI API || LangChain || Next.Js</h5>
-                </div>
-              </div>
-            </a>
-          </div> -->
-
-           <!-- Project 7 -->
-           <div class="flex py-4 px-4">
-            <a href="https://github.com/kristo-baricevic/productpal">
-              <div class="relative">
-                <img class="h-full rounded-2xl -z-1 max-h-72" src="images/product_pal.png" alt="Product Pal">
-                
-                <!-- Hidden content (h3 and h5) -->
-                <div class="absolute inset-0 px-4 flex flex-col justify-center items-center bg-white bg-opacity-100 rounded-2xl transition-opacity" style="opacity: 0;">
-                  <h3 class="flex justify-center text-black">Product Pal - Inventory Management</h3>
-                  <h5 class="flex justify-center text-lg text-black">Java Spring Boot MVC</h5>
-                  <h5 class="flex justify-center text-lg text-black">SQL || JavaMailAPI</h5>
-                </div>
-              </div>
-            </a>
-          </div>
-
-        </div>
-      </div>
-      <!-- End Portfolio Section -->
-    </div>
-    
-    <!-- Contact Section -->
-    <div class="w-full bg-gray-200">
-      <div class="flex flex-col justify-center text-grey px-4" id="contact">
-        <h2 class="flex justify-center align-middle py-4 text-4xl text-gray-900">Contact Me</h2>
-        <footer class="flex justify-center align-middle text-grey text-4xl">
-          <a href="https://www.linkedin.com/in/kristobaricevic/"><i class="fa fa-linkedin w-12 h-12 text-black hover:opacity-75"></i></a>
-          <a href="https://github.com/kristo-baricevic/"><i class="fa fa-github w-12 h-12 hover:opacity-75 text-black"></i></a>
-        </footer>
-        <div class="flex justify-center align-middle">
-          <p class="flex justify-center align-middle text-gray-900 px-2"><i class="flex justify-center align-middle fa fa-envelope fa-fw text-white text-3xl text-gray-900 px-2"></i> Email: kristo.baricevic@gmail.com</p>
-        </div>
-        <!-- End Contact Section -->
-      </div>
-
-      <div>
-        <!-- Footer -->
-        <footer class="flex justify-center align-middle text-grey text-md py-6">
-          <p class="flex justify-center align-middle text-gray-900 px-2">Thanks for visiting!</p>
-
-          <!-- <a class="text-red-200 hover:text-red-500" href="/api.html">EASTER EGG</a> -->
-        </footer>
-        <!-- End footer -->
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const relative = document.querySelector('.relative');
-
-    document.querySelectorAll('.relative').forEach((relative) => {
-    relative.addEventListener('mouseenter', () => {
-      const hidden = relative.querySelector('.absolute');
-      hidden.style.opacity = 1;
-      hidden.style.pointerEvents = 'auto';
-      hidden.style.zIndex = 1;
-    });
-
-    relative.addEventListener('mouseleave', () => {
-    const hidden = relative.querySelector('.absolute');
-    hidden.style.opacity = 0;
-    hidden.style.pointerEvents = 'none';
-    hidden.style.zIndex = -1;
-  });
-});
-
-  </script>
-  
+        <!-- Contact Section -->
+        <section class="contact" id="contact">
+            <h2>Let's Build Something Together</h2>
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/kristobaricevic/" class="contact-link">
+                    LinkedIn
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </a>
+                <a href="https://github.com/kristo-baricevic/" class="contact-link">
+                    GitHub
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                    </svg>
+                </a>
+            </div>
+            <p class="contact-email">kristo.baricevic@gmail.com</p>
+        </section>
+    </main>
 </body>
-
 </html>
