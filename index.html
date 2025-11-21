@@ -1,743 +1,982 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kristo Baricevic || Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            background-color: #000000;
-            color: #fafafa;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+      body {
+        background-color: #000000;
+        color: #fafafa;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
 
-        /* Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(0, 0, 0, 0.8);
-        }
+      /* Header */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        background: rgba(0, 0, 0, 0.8);
+      }
 
-        .nav-container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            height: 64px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+      .nav-container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
 
-        .logo {
-            font-size: 20px;
-            font-weight: 600;
-            color: #fafafa;
-            text-decoration: none;
+      .logo {
+        font-size: 20px;
+        font-weight: 600;
+        color: #fafafa;
+        text-decoration: none;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        color: #fafafa;
+      }
+
+      /* Main content */
+      .main-content {
+        margin-top: 64px;
+      }
+
+      /* Hero section */
+      .hero {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 128px 2rem 96px;
+        text-align: center;
+        position: relative;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 9999px;
+        font-size: 12px;
+        margin-bottom: 24px;
+        animation: fadeIn 1s ease 0s forwards;
+        opacity: 0;
+      }
+
+      .hero-title {
+        font-size: 96px;
+        line-height: 1;
+        font-weight: 500;
+        letter-spacing: -4.8px;
+        margin-bottom: 24px;
+        background: linear-gradient(
+          to right bottom,
+          #ffffff 30%,
+          rgba(255, 255, 255, 0.4)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: fadeIn 1s ease 0.2s forwards;
+        opacity: 0;
+      }
+
+      .hero-subtitle {
+        font-size: 20px;
+        color: #9ca3af;
+        letter-spacing: -0.5px;
+        margin-bottom: 48px;
+        animation: fadeIn 1s ease 0.4s forwards;
+        opacity: 0;
+      }
+
+      .hero-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 32px;
+        background: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 6px;
+        color: #fafafa;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.03);
+      }
+
+      .hero-cta:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-1px);
+      }
+
+      /* Dashboard preview */
+      .dashboard-preview {
+        margin-top: 128px;
+        position: relative;
+        animation: fadeUp 1s ease 0.4s forwards;
+        opacity: 0;
+      }
+
+      .dashboard-container {
+        background: rgba(255, 255, 255, 0.01);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .dashboard-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Tech stack section */
+      .tech-stack {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 96px 2rem;
+        text-align: center;
+      }
+
+      .tech-badge {
+        display: inline-block;
+        padding: 6px 12px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        color: #6b7280;
+        margin-bottom: 32px;
+      }
+
+      .tech-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 32px;
+      }
+
+      .tech-subtitle {
+        font-size: 20px;
+        color: #9ca3af;
+        max-width: 768px;
+        margin: 0 auto 48px;
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 16px;
+        margin-bottom: 48px;
+      }
+
+      .tech-card {
+        background: rgba(0, 0, 0, 1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 24px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
+      }
+
+      .tech-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .tech-card h3 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #d4d4d8;
+        margin-bottom: 12px;
+      }
+
+      .tech-card p {
+        color: #a3a3a3;
+        margin-bottom: 16px;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tech-tag {
+        padding: 4px 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        font-size: 12px;
+        color: #e5e5e5;
+      }
+
+      /* Projects section */
+      .projects {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 96px 2rem;
+      }
+
+      .projects-header {
+        text-align: center;
+        margin-bottom: 64px;
+      }
+
+      .projects-title {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 16px;
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        gap: 24px;
+      }
+
+      .project-card {
+        background: rgba(0, 0, 0, 1);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: inset 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
+        position: relative;
+      }
+
+      .project-card:hover {
+        transform: translateY(-4px);
+        border-color: rgba(255, 255, 255, 0.2);
+      }
+
+      .project-image {
+        width: 100%;
+        height: 240px;
+        object-fit: cover;
+        background: rgba(255, 255, 255, 0.05);
+      }
+
+      .project-content {
+        padding: 24px;
+      }
+
+      .project-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #d4d4d8;
+        margin-bottom: 8px;
+      }
+
+      .project-description {
+        color: #a3a3a3;
+        margin-bottom: 16px;
+        font-size: 14px;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 16px;
+      }
+
+      .project-tech-tag {
+        padding: 4px 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        font-size: 12px;
+        color: #e5e5e5;
+      }
+
+      .project-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #fafafa;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .project-link:hover {
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Code viewer */
+      .code-viewer {
+        background: rgba(0, 0, 0, 1);
+        border: 1px solid #272729;
+        border-radius: 8px;
+        padding: 16px;
+        margin: 16px 0;
+        font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+        font-size: 12px;
+        line-height: 1.4;
+        overflow-x: auto;
+      }
+
+      .code-viewer .key {
+        color: #88c6be;
+      }
+
+      .code-viewer .string {
+        color: #00ff83;
+      }
+
+      .code-viewer .number {
+        color: #d54e53;
+      }
+
+      .code-viewer .bracket {
+        color: #236a7c;
+      }
+
+      /* Contact section */
+      .contact {
+        background: rgba(0, 0, 0, 1);
+        color: #000;
+        padding: 96px 2rem;
+        text-align: center;
+      }
+
+      .contact h2 {
+        font-size: 36px;
+        font-weight: 700;
+        margin-bottom: 32px;
+        color: #fafafa;
+      }
+
+      .contact-links {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        margin-bottom: 24px;
+      }
+
+      .contact-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 24px;
+        background: #111827;
+        color: #fafafa;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .contact-link:hover {
+        background: #374151;
+        transform: translateY(-1px);
+      }
+
+      .contact-email {
+        color: #6b7280;
+        font-size: 16px;
+      }
+
+      /* Animations */
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(40px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 48px;
+          letter-spacing: -2.4px;
         }
 
         .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
+          display: none;
         }
 
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: #fafafa;
-        }
-
-        /* Main content */
-        .main-content {
-            margin-top: 64px;
-        }
-
-        /* Hero section */
-        .hero {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 128px 2rem 96px;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 9999px;
-            font-size: 12px;
-            margin-bottom: 24px;
-            animation: fadeIn 1s ease 0s forwards;
-            opacity: 0;
-        }
-
-        .hero-title {
-            font-size: 96px;
-            line-height: 1;
-            font-weight: 500;
-            letter-spacing: -4.8px;
-            margin-bottom: 24px;
-            background: linear-gradient(to right bottom, #ffffff 30%, rgba(255, 255, 255, 0.4));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeIn 1s ease 0.2s forwards;
-            opacity: 0;
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            color: #9ca3af;
-            letter-spacing: -0.5px;
-            margin-bottom: 48px;
-            animation: fadeIn 1s ease 0.4s forwards;
-            opacity: 0;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 10px 32px;
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 6px;
-            color: #fafafa;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.03);
-        }
-
-        .hero-cta:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-1px);
-        }
-
-        /* Dashboard preview */
-        .dashboard-preview {
-            margin-top: 128px;
-            position: relative;
-            animation: fadeUp 1s ease 0.4s forwards;
-            opacity: 0;
-        }
-
-        .dashboard-container {
-            background: rgba(255, 255, 255, 0.01);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .dashboard-image {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Tech stack section */
-        .tech-stack {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 96px 2rem;
-            text-align: center;
-        }
-
-        .tech-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-            color: #6b7280;
-            margin-bottom: 32px;
-        }
-
-        .tech-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 32px;
-        }
-
-        .tech-subtitle {
-            font-size: 20px;
-            color: #9ca3af;
-            max-width: 768px;
-            margin: 0 auto 48px;
-        }
-
-        .tech-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-            margin-bottom: 48px;
-        }
-
-        .tech-card {
-            background: rgba(0, 0, 0, 1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 24px;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
-        }
-
-        .tech-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .tech-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: #d4d4d8;
-            margin-bottom: 12px;
-        }
-
-        .tech-card p {
-            color: #a3a3a3;
-            margin-bottom: 16px;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        .tech-tag {
-            padding: 4px 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            font-size: 12px;
-            color: #e5e5e5;
-        }
-
-        /* Projects section */
-        .projects {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 96px 2rem;
-        }
-
-        .projects-header {
-            text-align: center;
-            margin-bottom: 64px;
-        }
-
-        .projects-title {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 16px;
-        }
-
+        .tech-grid,
         .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 24px;
-        }
-
-        .project-card {
-            background: rgba(0, 0, 0, 1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            box-shadow: inset 0 -20px 80px -20px rgba(255, 255, 255, 0.12);
-            position: relative;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .project-content {
-            padding: 24px;
-        }
-
-        .project-title {
-            font-size: 18px;
-            font-weight: 600;
-            color: #d4d4d8;
-            margin-bottom: 8px;
-        }
-
-        .project-description {
-            color: #a3a3a3;
-            margin-bottom: 16px;
-            font-size: 14px;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .project-tech-tag {
-            padding: 4px 8px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-            font-size: 12px;
-            color: #e5e5e5;
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: #fafafa;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Code viewer */
-        .code-viewer {
-            background: rgba(0, 0, 0, 1);
-            border: 1px solid #272729;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 16px 0;
-            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-            font-size: 12px;
-            line-height: 1.4;
-            overflow-x: auto;
-        }
-
-        .code-viewer .key {
-            color: #88c6be;
-        }
-
-        .code-viewer .string {
-            color: #00ff83;
-        }
-
-        .code-viewer .number {
-            color: #d54e53;
-        }
-
-        .code-viewer .bracket {
-            color: #236a7c;
-        }
-
-        /* Contact section */
-        .contact {
-            background: rgba(0, 0, 0, 1);
-            color: #000;
-            padding: 96px 2rem;
-            text-align: center;
-        }
-
-        .contact h2 {
-            font-size: 36px;
-            font-weight: 700;
-            margin-bottom: 32px;
-            color: #fafafa;
+          grid-template-columns: 1fr;
         }
 
         .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 24px;
+          flex-direction: column;
+          align-items: center;
         }
-
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background: #111827;
-            color: #fafafa;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .contact-link:hover {
-            background: #374151;
-            transform: translateY(-1px);
-        }
-
-        .contact-email {
-            color: #6b7280;
-            font-size: 16px;
-        }
-
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 48px;
-                letter-spacing: -2.4px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .tech-grid,
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Header -->
     <header class="header">
-        <nav class="nav-container">
-            <a href="#" class="logo">Kristo Baricevic</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+      <nav class="nav-container">
+        <a href="#" class="logo">Kristo Baricevic</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
-        <!-- Hero Section -->
-        <section class="hero">            
-            <h1 class="hero-title">Full-Stack Developer</h1>
-            
-            <p class="hero-subtitle">
-                Building modern web applications with JavaScript, TypeScript, React, Python, and AI APIs.<br>
-                Focused on clean code, scalable architecture, and exceptional user experiences.
-            </p>
+      <!-- Hero Section -->
+      <section class="hero">
+        <h1 class="hero-title">Full-Stack Developer</h1>
 
-            <a href="BaricevicResume.pdf" download="BaricevicResume.pdf" class="hero-cta">
-              Download My Resume
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" fill="none"/>
-              </svg>
-            </a>
-            
-            <a href="#projects" class="hero-cta">
-                View My Work
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M6 3L11 8L6 13" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <p class="hero-subtitle">
+          Building modern web applications with JavaScript, TypeScript, React,
+          Python, and AI APIs.<br />
+          Focused on clean code, scalable architecture, and exceptional user
+          experiences.
+        </p>
+
+        <a
+          href="BaricevicResume.pdf"
+          download="BaricevicResume.pdf"
+          class="hero-cta"
+        >
+          Download My Resume
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M6 3L11 8L6 13"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            />
+          </svg>
+        </a>
+
+        <a href="#projects" class="hero-cta">
+          View My Work
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M6 3L11 8L6 13"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            />
+          </svg>
+        </a>
+
+        <!-- Dashboard Preview -->
+        <div class="dashboard-preview">
+          <div class="dashboard-container">
+            <div style="padding: 24px; background: rgba(255, 255, 255, 0.02)">
+              <div
+                style="
+                  display: flex;
+                  align-items: center;
+                  gap: 8px;
+                  margin-bottom: 16px;
+                "
+              >
+                <div
+                  style="
+                    width: 12px;
+                    height: 12px;
+                    background: #ff5f57;
+                    border-radius: 50%;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 12px;
+                    height: 12px;
+                    background: #ffbd2e;
+                    border-radius: 50%;
+                  "
+                ></div>
+                <div
+                  style="
+                    width: 12px;
+                    height: 12px;
+                    background: #28ca42;
+                    border-radius: 50%;
+                  "
+                ></div>
+              </div>
+              <div class="code-viewer">
+                <div><span class="bracket">{</span></div>
+                <div>
+                  &nbsp;&nbsp;<span class="key">"developer"</span>:
+                  <span class="string">"Kristo Baricevic"</span>,
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="key">"role"</span>:
+                  <span class="string">"Full-Stack Developer"</span>,
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="key">"experience"</span>:
+                  <span class="number">2</span>,
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="key">"technologies"</span>:
+                  <span class="bracket">[</span>
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="string"
+                    >"JavaScript"</span
+                  >, <span class="string">"TypeScript"</span>,
+                  <span class="string">"React"</span>,
+                </div>
+                <div>
+                  &nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Next.js"</span>,
+                  <span class="string">"Python"</span>,
+                  <span class="string">"Django"</span>
+                </div>
+                <div>&nbsp;&nbsp;<span class="bracket">]</span>,</div>
+                <div>
+                  &nbsp;&nbsp;<span class="key">"currentFocus"</span>:
+                  <span class="string">"AI-driven applications"</span>,
+                </div>
+                <div>
+                  &nbsp;&nbsp;<span class="key">"available"</span>:
+                  <span style="color: #7aa6da">true</span>
+                </div>
+                <div><span class="bracket">}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Tech Stack Section -->
+      <section class="tech-stack" id="about">
+        <div class="tech-badge">TECHNOLOGY STACK</div>
+        <h2 class="tech-title">Modern Development Tools</h2>
+        <p class="tech-subtitle">
+          I work with cutting-edge technologies to build scalable, maintainable
+          applications that solve real-world problems and deliver exceptional
+          user experiences.
+        </p>
+
+        <div class="tech-grid">
+          <div class="tech-card">
+            <h3>Frontend Development</h3>
+            <p>
+              Creating responsive, interactive user interfaces with modern
+              frameworks and libraries.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">Tailwind CSS</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <h3>Backend Development</h3>
+            <p>
+              Building robust APIs and server-side applications with Python and
+              Node.js.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">FastAPI</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <h3>DevOps & Infrastructure</h3>
+            <p>
+              Managing deployment pipelines, containerization, and cloud
+              infrastructure for scalable applications.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Docker</span>
+              <span class="tech-tag">OrbStack</span>
+              <span class="tech-tag">Digital Ocean</span>
+              <span class="tech-tag">Worker Nodes</span>
+            </div>
+          </div>
+
+          <div class="tech-card">
+            <h3>AI Integration</h3>
+            <p>
+              Implementing AI-powered features using OpenAI APIs and machine
+              learning tools.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">OpenAI API</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">Python ML</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects Section -->
+      <section class="projects" id="projects">
+        <div class="projects-header">
+          <h2 class="projects-title">Featured Projects</h2>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card">
+            <img
+              class="project-image"
+              src="images/Callsine.jpeg"
+              alt="CallSine"
+            />
+            <div class="project-content">
+              <h3 class="project-title">CallSine - AI Sales Outreach</h3>
+              <p class="project-description">
+                AI-driven sales outreach platform built with Next.js,
+                TypeScript, and Python Django. Features advanced automation and
+                analytics for sales teams.
+              </p>
+              <div class="project-tech">
+                <span class="project-tech-tag">Next.js</span>
+                <span class="project-tech-tag">TypeScript</span>
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">Django</span>
+                <span class="project-tech-tag">OpenAI API</span>
+              </div>
+              <a href="https://callsine.com/" class="project-link">
+                View Project
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 9L9 3M9 3H3M9 3V9"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
                 </svg>
-            </a>
-
-            <!-- Dashboard Preview -->
-            <div class="dashboard-preview">
-                <div class="dashboard-container">
-                    <div style="padding: 24px; background: rgba(255, 255, 255, 0.02);">
-                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 16px;">
-                            <div style="width: 12px; height: 12px; background: #ff5f57; border-radius: 50%;"></div>
-                            <div style="width: 12px; height: 12px; background: #ffbd2e; border-radius: 50%;"></div>
-                            <div style="width: 12px; height: 12px; background: #28ca42; border-radius: 50%;"></div>
-                        </div>
-                        <div class="code-viewer">
-                            <div><span class="bracket">{</span></div>
-                            <div>&nbsp;&nbsp;<span class="key">"developer"</span>: <span class="string">"Kristo Baricevic"</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="key">"role"</span>: <span class="string">"Full-Stack Developer"</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="key">"experience"</span>: <span class="number">2</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="key">"technologies"</span>: <span class="bracket">[</span></div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"JavaScript"</span>, <span class="string">"TypeScript"</span>, <span class="string">"React"</span>,</div>
-                            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Next.js"</span>, <span class="string">"Python"</span>, <span class="string">"Django"</span></div>
-                            <div>&nbsp;&nbsp;<span class="bracket">]</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="key">"currentFocus"</span>: <span class="string">"AI-driven applications"</span>,</div>
-                            <div>&nbsp;&nbsp;<span class="key">"available"</span>: <span style="color: #7aa6da;">true</span></div>
-                            <div><span class="bracket">}</span></div>
-                        </div>
-                    </div>
-                </div>
+              </a>
             </div>
-        </section>
+          </div>
 
-        <!-- Tech Stack Section -->
-        <section class="tech-stack" id="about">
-            <div class="tech-badge">TECHNOLOGY STACK</div>
-            <h2 class="tech-title">Modern Development Tools</h2>
-            <p class="tech-subtitle">
-                I work with cutting-edge technologies to build scalable, maintainable applications 
-                that solve real-world problems and deliver exceptional user experiences.
-            </p>
-
-            <div class="tech-grid">
-                <div class="tech-card">
-                    <h3>Frontend Development</h3>
-                    <p>Creating responsive, interactive user interfaces with modern frameworks and libraries.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">TypeScript</span>
-                        <span class="tech-tag">Tailwind CSS</span>
-                    </div>
-                </div>
-
-                <div class="tech-card">
-                    <h3>Backend Development</h3>
-                    <p>Building robust APIs and server-side applications with Python and Node.js.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Django</span>
-                        <span class="tech-tag">FastAPI</span>
-                        <span class="tech-tag">PostgreSQL</span>
-                    </div>
-                </div>
-
-                <div class="tech-card">
-                  <h3>DevOps & Infrastructure</h3>
-                  <p>Managing deployment pipelines, containerization, and cloud infrastructure for scalable applications.</p>
-                  <div class="tech-tags">
-                      <span class="tech-tag">Docker</span>
-                      <span class="tech-tag">OrbStack</span>
-                      <span class="tech-tag">Digital Ocean</span>
-                      <span class="tech-tag">Worker Nodes</span>
-                  </div>
-               </div>
-
-                <div class="tech-card">
-                    <h3>AI Integration</h3>
-                    <p>Implementing AI-powered features using OpenAI APIs and machine learning tools.</p>
-                    <div class="tech-tags">
-                        <span class="tech-tag">OpenAI API</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Python ML</span>
-                    </div>
-                </div>
+          <div class="project-card">
+            <img
+              class="project-image"
+              src="images/dream_app.png"
+              alt="Dream Analysis"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Dream Analysis App</h3>
+              <p class="project-description">
+                AI-enhanced dream analysis application using machine learning to
+                provide insights into dream patterns and meanings.
+              </p>
+              <div class="project-tech">
+                <span class="project-tech-tag">Next.js</span>
+                <span class="project-tech-tag">TypeScript</span>
+                <span class="project-tech-tag">OpenAI API</span>
+                <span class="project-tech-tag">Langchain</span>
+                <span class="project-tech-tag">RAG</span>
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">Django</span>
+              </div>
+              <a href="https://dream-app-nu.vercel.app/" class="project-link">
+                View Project
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 9L9 3M9 3H3M9 3V9"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </a>
             </div>
-        </section>
+          </div>
 
-        <!-- Projects Section -->
-        <section class="projects" id="projects">
-            <div class="projects-header">
-                <h2 class="projects-title">Featured Projects</h2>
+          <div class="project-card">
+            <img
+              class="project-image"
+              src="images/dream_app.png"
+              alt="Dream Analysis"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Approps</h3>
+              <p class="project-description">
+                AI-enhanced PDF-parsing application that ingests and breaks down
+                complex Congressional Appropriations Bills and turns them into
+                readable tables.
+              </p>
+              <div class="project-tech">
+                <span class="project-tech-tag">Next.js</span>
+                <span class="project-tech-tag">TypeScript</span>
+                <span class="project-tech-tag">OpenAI API</span>
+                <span class="project-tech-tag">PostgreSQL</span>
+                <span class="project-tech-tag">Python</span>
+              </div>
+              <a href="https://approps.vercel.app/" class="project-link">
+                View Project
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 9L9 3M9 3H3M9 3V9"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </a>
             </div>
+          </div>
 
-            <div class="projects-grid">
-                <div class="project-card">
-                  <img class="project-image" src="images/Callsine.jpeg" alt="CallSine">
-                    <div class="project-content">
-                        <h3 class="project-title">CallSine - AI Sales Outreach</h3>
-                        <p class="project-description">
-                            AI-driven sales outreach platform built with Next.js, TypeScript, and Python Django. 
-                            Features advanced automation and analytics for sales teams.
-                        </p>
-                        <div class="project-tech">
-                            <span class="project-tech-tag">Next.js</span>
-                            <span class="project-tech-tag">TypeScript</span>
-                            <span class="project-tech-tag">Python</span>
-                            <span class="project-tech-tag">Django</span>
-                            <span class="project-tech-tag">OpenAI API</span>
-                        </div>
-                        <a href="https://callsine.com/" class="project-link">
-                            View Project
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                  <img class="project-image" src="images/dream_app.png" alt="Dream Analysis">
-                    <div class="project-content">
-                        <h3 class="project-title">Dream Analysis App</h3>
-                        <p class="project-description">
-                            AI-enhanced dream analysis application using machine learning to provide insights 
-                            into dream patterns and meanings.
-                        </p>
-                        <div class="project-tech">
-                            <span class="project-tech-tag">Next.js</span>
-                            <span class="project-tech-tag">TypeScript</span>
-                            <span class="project-tech-tag">OpenAI API</span>
-                            <span class="project-tech-tag">PostgreSQL</span>
-                        </div>
-                        <a href="https://dream-app-nu.vercel.app/" class="project-link">
-                            View Project
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                  <img class="project-image"  src="images/Balancer.png" alt="Photography Archive">
-                    <div class="project-content">
-                        <h3 class="project-title">Medical Prescriber Assistant</h3>
-                        <p class="project-description">
-                            Web application for medical professionals to assist with prescription management 
-                            and patient care using AI-driven recommendations.
-                        </p>
-                        <div class="project-tech">
-                            <span class="project-tech-tag">React</span>
-                            <span class="project-tech-tag">TypeScript</span>
-                            <span class="project-tech-tag">Python</span>
-                            <span class="project-tech-tag">Django</span>
-                        </div>
-                        <a href="https://balancertestsite.com/" class="project-link">
-                            View Project
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                  <img class="project-image" src="images/mediaplayer.png" alt="Photography Archive">
-                  <div class="project-content">
-                        <h3 class="project-title">Multi-Track Media Player</h3>
-                        <p class="project-description">
-                            Advanced media player built with TypeScript and Web Audio API, featuring 
-                            multi-track support and advanced audio controls.
-                        </p>
-                        <div class="project-tech">
-                            <span class="project-tech-tag">TypeScript</span>
-                            <span class="project-tech-tag">React</span>
-                            <span class="project-tech-tag">Web Audio API</span>
-                        </div>
-                        <a href="https://kr1st0-music-player.vercel.app/" class="project-link">
-                            View Project
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                  <img class="project-image" src="images/BOB_Archive.png" alt="Photography Archive">
-                    <div class="project-content">
-                        <h3 class="project-title">Bob Reuter Photography Archive</h3>
-                        <p class="project-description">
-                            A very basic MERN app that acts as the digital archive for the late photographer, Bob Reuter.
-                        </p>
-                        <div class="project-tech">
-                            <span class="project-tech-tag">Mongo DB</span>
-                            <span class="project-tech-tag">Express.Js</span>
-                            <span class="project-tech-tag">React</span>
-                            <span class="project-tech-tag">Node.Js</span>
-                        </div>
-                        <a href="https://bobreuterphotoarchive.vercel.app/" class="project-link">
-                            View Project
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                  <img class="project-image" src="images/BMR_Website.png" alt="Big Muddy Records">
-                    <div class="project-content">
-                        <h3 class="project-title">Big Muddy Records Website</h3>
-                        <p class="project-description">
-                            Website for my old record label, which I ran from 2005-2020.
-                        </p>
-                        <div class="project-tech">
-                            <span class="project-tech-tag">Wordpress</span>
-                            <span class="project-tech-tag">HTML</span>
-                            <span class="project-tech-tag">CSS</span>
-                        </div>
-                        <a href="https://bigmuddyrecords.com/" class="project-link">
-                            View Project
-                            <svg width="12" height="12" viewBox="0 0 12 12" fill="currentColor">
-                                <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
+          <div class="project-card">
+            <img
+              class="project-image"
+              src="images/Balancer.png"
+              alt="Photography Archive"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Medical Prescriber Assistant</h3>
+              <p class="project-description">
+                Web application for medical professionals to assist with
+                prescription management and patient care using AI-driven
+                recommendations.
+              </p>
+              <div class="project-tech">
+                <span class="project-tech-tag">React</span>
+                <span class="project-tech-tag">TypeScript</span>
+                <span class="project-tech-tag">Python</span>
+                <span class="project-tech-tag">Django</span>
+              </div>
+              <a href="https://balancertestsite.com/" class="project-link">
+                View Project
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 9L9 3M9 3H3M9 3V9"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </a>
             </div>
-        </section>
+          </div>
 
-        <!-- Contact Section -->
-        <section class="contact" id="contact">
-            <h2>Let's Build Something Together</h2>
-            <div class="contact-links">
-                <a href="https://www.linkedin.com/in/kristobaricevic/" class="contact-link">
-                    LinkedIn
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                        <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                    </svg>
-                </a>
-                <a href="https://github.com/kristo-baricevic/" class="contact-link">
-                    GitHub
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                        <path d="M3 9L9 3M9 3H3M9 3V9" stroke="currentColor" stroke-width="1.5" fill="none"/>
-                    </svg>
-                </a>
+          <div class="project-card">
+            <img
+              class="project-image"
+              src="images/mediaplayer.png"
+              alt="Photography Archive"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Multi-Track Media Player</h3>
+              <p class="project-description">
+                Advanced media player built with TypeScript and Web Audio API,
+                featuring multi-track support and advanced audio controls.
+              </p>
+              <div class="project-tech">
+                <span class="project-tech-tag">TypeScript</span>
+                <span class="project-tech-tag">React</span>
+                <span class="project-tech-tag">Web Audio API</span>
+              </div>
+              <a
+                href="https://kr1st0-music-player.vercel.app/"
+                class="project-link"
+              >
+                View Project
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 9L9 3M9 3H3M9 3V9"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </a>
             </div>
-            <p class="contact-email">kristo.baricevic@gmail.com</p>
-        </section>
+          </div>
+
+          <div class="project-card">
+            <img
+              class="project-image"
+              src="images/BOB_Archive.png"
+              alt="Photography Archive"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Bob Reuter Photography Archive</h3>
+              <p class="project-description">
+                A very basic MERN app that acts as the digital archive for the
+                late photographer, Bob Reuter.
+              </p>
+              <div class="project-tech">
+                <span class="project-tech-tag">Mongo DB</span>
+                <span class="project-tech-tag">Express.Js</span>
+                <span class="project-tech-tag">React</span>
+                <span class="project-tech-tag">Node.Js</span>
+              </div>
+              <a
+                href="https://bobreuterphotoarchive.vercel.app/"
+                class="project-link"
+              >
+                View Project
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 9L9 3M9 3H3M9 3V9"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <img
+              class="project-image"
+              src="images/BMR_Website.png"
+              alt="Big Muddy Records"
+            />
+            <div class="project-content">
+              <h3 class="project-title">Big Muddy Records Website</h3>
+              <p class="project-description">
+                Website for my old record label, which I ran from 2005-2020.
+              </p>
+              <div class="project-tech">
+                <span class="project-tech-tag">Wordpress</span>
+                <span class="project-tech-tag">HTML</span>
+                <span class="project-tech-tag">CSS</span>
+              </div>
+              <a href="https://bigmuddyrecords.com/" class="project-link">
+                View Project
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 12 12"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 9L9 3M9 3H3M9 3V9"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact" id="contact">
+        <h2>Let's Build Something Together</h2>
+        <div class="contact-links">
+          <a
+            href="https://www.linkedin.com/in/kristobaricevic/"
+            class="contact-link"
+          >
+            LinkedIn
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path
+                d="M3 9L9 3M9 3H3M9 3V9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+              />
+            </svg>
+          </a>
+          <a href="https://github.com/kristo-baricevic/" class="contact-link">
+            GitHub
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+              <path
+                d="M3 9L9 3M9 3H3M9 3V9"
+                stroke="currentColor"
+                stroke-width="1.5"
+                fill="none"
+              />
+            </svg>
+          </a>
+        </div>
+        <p class="contact-email">kristo.baricevic@gmail.com</p>
+      </section>
     </main>
-</body>
+  </body>
 </html>
