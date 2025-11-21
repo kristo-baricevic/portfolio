@@ -201,9 +201,9 @@
 
       .tech-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
         gap: 16px;
         margin-bottom: 48px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
       }
 
       .tech-card {
@@ -449,7 +449,6 @@
           display: none;
         }
 
-        .tech-grid,
         .projects-grid {
           grid-template-columns: 1fr;
         }
@@ -457,6 +456,19 @@
         .contact-links {
           flex-direction: column;
           align-items: center;
+        }
+      }
+
+
+      @media (max-width: 1024px) {
+        .tech-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 x 2 on medium screens */
+        }
+      }
+
+      @media (max-width: 640px) {
+        .tech-grid {
+          grid-template-columns: 1fr; /* single column on small screens */
         }
       }
     </style>
