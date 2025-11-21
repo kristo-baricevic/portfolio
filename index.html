@@ -137,6 +137,7 @@
         font-weight: 500;
         transition: all 0.3s ease;
         box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.03);
+        margin: 0 8px;
       }
 
       .hero-cta:hover {
@@ -219,7 +220,7 @@
 
       .tech-card:hover {
         transform: translateY(-4px);
-        border-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(26, 255, 0, 0.2);
       }
 
       .tech-card h3 {
@@ -238,6 +239,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 8px;
+        justify-content: center;
       }
 
       .tech-tag {
@@ -316,6 +318,7 @@
         flex-wrap: wrap;
         gap: 8px;
         margin-bottom: 16px;
+        justify-content: center;
       }
 
       .project-tech-tag {
@@ -339,6 +342,14 @@
 
       .project-link:hover {
         color: rgba(255, 255, 255, 0.7);
+      }
+
+      .project-links {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        margin-top: 8px;
+        align-items: flex-start;
       }
 
       /* Code viewer */
@@ -457,18 +468,21 @@
           flex-direction: column;
           align-items: center;
         }
-      }
 
+        .hero-cta {
+          margin-top: 8px;
+        }
+      }
 
       @media (max-width: 1024px) {
         .tech-grid {
-          grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 x 2 on medium screens */
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
 
       @media (max-width: 640px) {
         .tech-grid {
-          grid-template-columns: 1fr; /* single column on small screens */
+          grid-template-columns: 1fr;
         }
       }
     </style>
@@ -526,6 +540,7 @@
             />
           </svg>
         </a>
+      </section>
 
       <!-- Tech Stack Section -->
       <section class="tech-stack" id="about">
@@ -663,22 +678,62 @@
                 <span class="project-tech-tag">Python</span>
                 <span class="project-tech-tag">Django</span>
               </div>
-              <a href="https://dream-app-nu.vercel.app/" class="project-link">
-                View Project
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="currentColor"
+              <div class="project-links">
+                <a href="https://dream-app-nu.vercel.app/" class="project-link">
+                  View Project
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/kristo-baricevic/dream-app"
+                  class="project-link"
                 >
-                  <path
-                    d="M3 9L9 3M9 3H3M9 3V9"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-              </a>
+                  GitHub (Frontend)
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/kristo-baricevic/django_backend_dream"
+                  class="project-link"
+                >
+                  GitHub (Backend)
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -691,9 +746,9 @@
             <div class="project-content">
               <h3 class="project-title">Approps</h3>
               <p class="project-description">
-                AI-enhanced PDF-parsing app that ingests and breaks down
-                complex Congressional Appropriations Bills and turns them into
-                readable tables.
+                AI-enhanced PDF-parsing app that ingests and breaks down complex
+                Congressional Appropriations Bills and turns them into readable
+                tables.
               </p>
               <div class="project-tech">
                 <span class="project-tech-tag">Next.js</span>
@@ -702,22 +757,43 @@
                 <span class="project-tech-tag">PostgreSQL</span>
                 <span class="project-tech-tag">Python</span>
               </div>
-              <a href="https://approps.vercel.app/" class="project-link">
-                View Project
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="currentColor"
+              <div class="project-links">
+                <a href="https://approps.vercel.app/" class="project-link">
+                  View Project
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/kristo-baricevic/approps"
+                  class="project-link"
                 >
-                  <path
-                    d="M3 9L9 3M9 3H3M9 3V9"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-              </a>
+                  GitHub
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -725,7 +801,7 @@
             <img
               class="project-image"
               src="images/Balancer.png"
-              alt="Photography Archive"
+              alt="Medical Prescriber Assistant"
             />
             <div class="project-content">
               <h3 class="project-title">Medical Prescriber Assistant</h3>
@@ -740,22 +816,43 @@
                 <span class="project-tech-tag">Python</span>
                 <span class="project-tech-tag">Django</span>
               </div>
-              <a href="https://balancertestsite.com/" class="project-link">
-                View Project
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="currentColor"
+              <div class="project-links">
+                <a href="https://balancertestsite.com/" class="project-link">
+                  View Project
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/kristo-baricevic/balancer-main"
+                  class="project-link"
                 >
-                  <path
-                    d="M3 9L9 3M9 3H3M9 3V9"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-              </a>
+                  GitHub
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -763,7 +860,7 @@
             <img
               class="project-image"
               src="images/mediaplayer.png"
-              alt="Photography Archive"
+              alt="Multi-Track Media Player"
             />
             <div class="project-content">
               <h3 class="project-title">Multi-Track Media Player</h3>
@@ -776,25 +873,46 @@
                 <span class="project-tech-tag">React</span>
                 <span class="project-tech-tag">Web Audio API</span>
               </div>
-              <a
-                href="https://kr1st0-music-player.vercel.app/"
-                class="project-link"
-              >
-                View Project
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="currentColor"
+              <div class="project-links">
+                <a
+                  href="https://kr1st0-music-player.vercel.app/"
+                  class="project-link"
                 >
-                  <path
-                    d="M3 9L9 3M9 3H3M9 3V9"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-              </a>
+                  View Project
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/kristo-baricevic/player-visualizer"
+                  class="project-link"
+                >
+                  GitHub
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -802,39 +920,60 @@
             <img
               class="project-image"
               src="images/BOB_Archive.png"
-              alt="Photography Archive"
+              alt="Bob Reuter Photography Archive"
             />
             <div class="project-content">
               <h3 class="project-title">Bob Reuter Photography Archive</h3>
               <p class="project-description">
-                A very basic MERN app that acts as the digital archive for the
-                late photographer, Bob Reuter.
+                A basic MERN app that acts as the digital archive for the late
+                photographer, Bob Reuter.
               </p>
               <div class="project-tech">
                 <span class="project-tech-tag">Mongo DB</span>
-                <span class="project-tech-tag">Express.Js</span>
+                <span class="project-tech-tag">Express.js</span>
                 <span class="project-tech-tag">React</span>
-                <span class="project-tech-tag">Node.Js</span>
+                <span class="project-tech-tag">Node.js</span>
               </div>
-              <a
-                href="https://bobreuterphotoarchive.vercel.app/"
-                class="project-link"
-              >
-                View Project
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 12 12"
-                  fill="currentColor"
+              <div class="project-links">
+                <a
+                  href="https://bobreuterphotoarchive.vercel.app/"
+                  class="project-link"
                 >
-                  <path
-                    d="M3 9L9 3M9 3H3M9 3V9"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    fill="none"
-                  />
-                </svg>
-              </a>
+                  View Project
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://github.com/kristo-baricevic/bobApp2"
+                  class="project-link"
+                >
+                  GitHub
+                  <svg
+                    width="12"
+                    height="12"
+                    viewBox="0 0 12 12"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M3 9L9 3M9 3H3M9 3V9"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="none"
+                    />
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
 
@@ -850,7 +989,7 @@
                 Website for my old record label, which I ran from 2005-2020.
               </p>
               <div class="project-tech">
-                <span class="project-tech-tag">Wordpress</span>
+                <span class="project-tech-tag">WordPress</span>
                 <span class="project-tech-tag">HTML</span>
                 <span class="project-tech-tag">CSS</span>
               </div>
